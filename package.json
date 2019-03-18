@@ -1,6 +1,7 @@
 {
   "name": "fashion-finder",
   "scripts": {
+    "start": "parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/rtfdm/fashion-finder/issues"
   },
-  "homepage": "https://github.com/rtfdm/fashion-finder#readme"
+  "homepage": "https://github.com/rtfdm/fashion-finder#readme",
+  "devDependencies": {
+    "parcel": "^1.12.2"
+  }
 }
