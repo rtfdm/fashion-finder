@@ -17,5 +17,9 @@
     "eslint": "^5.15.2",
     "eslint-plugin-react": "^7.12.4",
     "parcel": "^1.12.2"
+  },
+  "dependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   }
 }
