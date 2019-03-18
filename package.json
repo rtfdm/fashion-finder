@@ -1,0 +1,15 @@
+{
+  "name": "fashion-finder",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rtfdm/fashion-finder.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rtfdm/fashion-finder/issues"
+  },
+  "homepage": "https://github.com/rtfdm/fashion-finder#readme"
+}
