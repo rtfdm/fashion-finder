@@ -31,7 +31,6 @@ const StyledDismissButton = styled(DismissButton)`
 const LookPage = () => {
   return (
     <div>
-      {console.log(X)}
       <StyledLookImage src="https://i.imgur.com/n1IqG2c.jpg" />
       <StyledDismissButton IconComponent={X} />
     </div>
