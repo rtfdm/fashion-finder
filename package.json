@@ -30,8 +30,6 @@
     "styled-components": "^4.1.3"
 },
   "jest": {
-      "modulePathIgnorePatterns": [
-        "<rootDir>/cypress/"
-      ]
-    },
+      "modulePathIgnorePatterns": ["<rootDir>/cypress/"]
+    }
 }
