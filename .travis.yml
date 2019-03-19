@@ -4,9 +4,16 @@ node_js:
 cache:
   directories:
     - node_modules
+    - ~/.cache
+install:
+  - npm ci
+before_script:
+  - npm start &
 script:
   - npm run build
   - npm run test
+  - $(npm bin)/cypress run --config baseUrl=http://localhost:1234
+
 
 deploy:
   provider: firebase
