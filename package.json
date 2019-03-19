@@ -3,7 +3,8 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "test": "jest"
+    "test": "jest",
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,7 @@
   },
   "homepage": "https://github.com/rtfdm/fashion-finder#readme",
   "devDependencies": {
+    "cypress": "^3.2.0",
     "eslint": "^5.15.2",
     "eslint-plugin-react": "^7.12.4",
     "jest": "^24.5.0",
