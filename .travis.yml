@@ -7,7 +7,8 @@ cache:
     - ~/.cache
 install:
   - npm ci
-  - npm start
+before_script:
+  - npm start &
 script:
   - npm run build
   - npm run test
