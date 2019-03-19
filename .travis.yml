@@ -12,7 +12,7 @@ before_script:
 script:
   - npm run build
   - npm run test
-  - $(npm bin)/cypress run
+  - $(npm bin)/cypress run --config baseUrl=http://localhost:1234
 
 
 deploy:
