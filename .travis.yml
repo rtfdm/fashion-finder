@@ -7,10 +7,12 @@ cache:
     - ~/.cache
 install:
   - npm ci
+before_script:
+  - npm start -- --silent &
 script:
   - npm run build
   - npm run test
-  - $(npm bin)/cypress run
+  - npm run cypress:run
 
 
 deploy:
