@@ -4,16 +4,16 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 
 import LookPage from '../LookPage'
-import Basket from '../Basket'
+import LookInfo from '../LookInfo'
 
 export default () => (
   <BrowserRouter>
   <div>
     <Route exact={true} path="/" render={props => <LookPage />} />
-    <Route exact={true} path="/basket" render={props => <Basket />} />
+    <Route exact={true} path="/lookinfo" render={props => <LookInfo />} />
   </div>
   </BrowserRouter>
 ) 
 
 
-// return <LookPage />}
+
