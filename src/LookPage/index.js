@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { X, Check } from 'react-feather'
+import { X, Check, Gift } from 'react-feather'
+import { Link } from 'react-router-dom'
 
 const LookImage = ({ src, className }) => {
   return <img className={className} id="displayed-look" src={src} />
@@ -16,8 +17,23 @@ const StyledLookImage = styled(LookImage)`
   box-shadow: 0px 4px 20px rgba(79, 79, 79, 0.25);
 `
 
-const LikeDismissButton = ({className, id, IconComponent, color}) => {
-  return <div className={className} id={id}>{<IconComponent color={color} size="32"/>}</div>
+const LikeDismissButton = ({ className, id, IconComponent, color }) => {
+  return (
+    <div className={className} id={id}>
+      {<IconComponent color={color} size="32" />}
+    </div>
+  )
+}
+
+const LookBookLink = ({ className, id, IconComponent, color }) => {
+  return (
+    <Link to="/lookbook">
+      <div className={className} id={id}>
+        Your lookbook <nbsp />
+        {<IconComponent color={color} size="20" />}
+      </div>
+    </Link>
+  )
 }
 
 const StyledLikeDismissButton = styled(LikeDismissButton)`
@@ -33,19 +49,28 @@ const StyledLikeDismissButton = styled(LikeDismissButton)`
 `
 
 const ButtonContainer = styled.div`
- display: flex;
- width: min-content;
- margin: 0 auto;
- margin-top: 40px;
+  display: flex;
+  width: min-content;
+  margin: 0 auto;
+  margin-top: 40px;
 `
 
 const LookPage = () => {
   return (
     <div>
+      <LookBookLink id="lookbook" IconComponent={Gift} color="#EE8CA3" />
       <StyledLookImage src="https://i.imgur.com/n1IqG2c.jpg" />
       <ButtonContainer>
-        <StyledLikeDismissButton id="dismiss-button" IconComponent={X} color="#EE8CA3" />
-        <StyledLikeDismissButton id="like-button" IconComponent={Check} color="#A6BEFA" />
+        <StyledLikeDismissButton
+          id="dismiss-button"
+          IconComponent={X}
+          color="#EE8CA3"
+        />
+        <StyledLikeDismissButton
+          id="like-button"
+          IconComponent={Check}
+          color="#A6BEFA"
+        />
       </ButtonContainer>
     </div>
   )
