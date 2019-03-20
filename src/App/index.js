@@ -1,8 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
+
 
 import LookPage from '../LookPage'
+import Basket from '../Basket'
 
-export default () => {
-  return <LookPage />
-}
+export default () => (
+  <BrowserRouter>
+  <div>
+    <Route exact={true} path="/" render={props => <LookPage />} />
+    <Route exact={true} path="/basket" render={props => <Basket />} />
+  </div>
+  </BrowserRouter>
+) 
+
+
+// return <LookPage />}
