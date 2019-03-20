@@ -1,3 +1,6 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=e6a4c359a41c464243d1f10927d1d08b2e841053604c9b6ca20d53d412d3c91f
 language: node_js
 node_js:
   - "stable"
@@ -8,11 +11,16 @@ cache:
 install:
   - npm ci
 before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
   - npm start &
 script:
   - npm run build
   - npm run test
   - $(npm bin)/cypress run --config baseUrl=http://localhost:1234
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 
 deploy:
