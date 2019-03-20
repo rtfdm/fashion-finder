@@ -7,17 +7,23 @@ const LookPageLink = ({ className, id, IconComponent, color }) => {
   return (
     <Link to="/">
       <div className={className} id={id}>
-        Get inspired <nbsp />
-        {<IconComponent color={color} size="20" />}
+        {<IconComponent color={color} size="20" style={ArrowMargin}/>}
+        <br />Get inspired
       </div>
     </Link>
   )
 }
 
+const ArrowMargin = {
+  marginLeft: '25px'
+}
+
+const StyledLookPageLink = styled(LookPageLink)``
+
 const Basket = () => {
   return (
     <div>
-      <LookPageLink id="lookpage" IconComponent={ArrowLeft} color="#EE8CA3" />
+      <StyledLookPageLink id="lookpage" IconComponent={ArrowLeft} color="#EE8CA3" />
       <h1> Hello World </h1>
     </div>
   )

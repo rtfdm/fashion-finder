@@ -29,8 +29,8 @@ const LookBookLink = ({ className, id, IconComponent, color }) => {
   return (
     <Link to="/lookbook">
       <div className={className} id={id}>
-        Your lookbook <nbsp />
         {<IconComponent color={color} size="20" />}
+        <br />Your lookbook
       </div>
     </Link>
   )
