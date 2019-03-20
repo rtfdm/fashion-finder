@@ -33,10 +33,10 @@ const StyledLikeDismissButton = styled(LikeDismissButton)`
 `
 
 const ButtonContainer = styled.div`
- display: flex;
- width: min-content;
- margin: 0 auto;
- margin-top: 40px;
+  display: flex;
+  width: min-content;
+  margin: 0 auto;
+  margin-top: 40px;
 `
 
 const LookPage = () => {
