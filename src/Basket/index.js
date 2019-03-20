@@ -26,26 +26,30 @@ const StyledLookPageLink = styled(LookPageLink)``
 
 class Basket extends Component {
   state = { MyBasket: {} }  
+
+
   componentDidMount() {
     this.setState( { MyBasket: basketItems })
   }
+
+
   render() {
   return (
     <div>
       <StyledLookPageLink id="lookpage" IconComponent={ArrowLeft} color="#EE8CA3" />
       <h1> Your Lookbook </h1>
-      {console.log(this.state.MyBasket)}
       <ul>
-      { Object.keys(this.state.MyBasket).map(key => {
-        
-        return <li key = {key}>
-            {this.state.MyBasket[key].name}  
-            {this.state.MyBasket[key].price}
+        { Object.keys(this.state.MyBasket).map(key => {
           
-        </li>
-       console.log(this.state.MyBasket[key]) }
-) }
+          return <li key = {key}>
+              {this.state.MyBasket[key].name}  
+              {this.state.MyBasket[key].price}
+            
+          </li>
+        console.log(this.state.MyBasket[key]) }
+        ) }
       </ul>
+      
     </div>
   )
   }
