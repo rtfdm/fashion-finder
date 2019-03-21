@@ -23,14 +23,16 @@ const Container = styled.div`
 `
 
 const ListContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
   max-width: 1200px;
   background-color: #fff;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
   padding: 0;
   margin: 0;
   list-style: none;
+  margin-bottom: 80px;
+
 `
 
 const HeaderStyle = styled.div`
@@ -43,12 +45,31 @@ const HeaderStyle = styled.div`
   margin: 0;
   list-style: none;
 `
+const FooterStyling = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #000000;
+  opacity: 0.8;
+  padding: 10px;
+  color: #ffff
+  text-align: center;
+  min-width: 80vw;
+`
+
+const ButtonStyle = {
+  borderRadius: '25px',
+}
 
 const ArrowMargin = {
   marginLeft: '25px',
 }
 
-const StyledLookPageLink = styled(LookPageLink)``
+const StyledLookPageLink = styled(LookPageLink)`
+ 
+`
 
 class Basket extends Component {
   state = { MyBasket: {} }
@@ -66,15 +87,22 @@ class Basket extends Component {
             IconComponent={ArrowLeft}
             color="#EE8CA3"
           />
+        </HeaderStyle>
+        <HeaderStyle>
           <h1 >Your Lookbook</h1>
         </HeaderStyle>
         <ul>
-        <ListContainer>
+          <ListContainer>
             {Object.keys(this.state.MyBasket).map(key => (
               <Item key={key} details={this.state.MyBasket[key]} />
             ))}
           </ListContainer>
-        </ul>
+        </ul>   
+        <FooterStyling>
+          <footer>
+            <button style={ButtonStyle}>Get the looks</button>
+          </footer>
+        </FooterStyling>
       </Container>
     )
   }
