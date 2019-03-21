@@ -11,12 +11,29 @@ const LookPageLink = ({ className, id, IconComponent, color }) => {
   return (
     <Link to="/">
       <div className={className} id={id}>
-        {<IconComponent color={color} size="20" style={ArrowMargin}/>}
-        <br />Get inspired
+        {<IconComponent color={color} size="20" style={ArrowMargin} />}
+        <br />
+        Get inspired
       </div>
     </Link>
   )
 }
+
+const Container = styled.div`
+  max-width: 1200px;
+  margin: auto;
+`
+
+const ListContainer = styled.div`
+  max-width: 1200px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+`
 
 const ArrowMargin = {
   marginLeft: '25px'
@@ -35,9 +52,13 @@ class Basket extends Component {
 
   render() {
   return (
-    <div>
-      <StyledLookPageLink id="lookpage" IconComponent={ArrowLeft} color="#EE8CA3" />
-      <h1> Your Lookbook </h1>
+      <Container>
+        <StyledLookPageLink
+          id="lookpage"
+          IconComponent={ArrowLeft}
+          color="#EE8CA3"
+        />
+        <h1>Your Lookbook</h1>
       <ul>
         { Object.keys(this.state.MyBasket).map(key => {
           
@@ -49,8 +70,7 @@ class Basket extends Component {
         console.log(this.state.MyBasket[key]) }
         ) }
       </ul>
-      
-    </div>
+      </Container>
   )
   }
 }
