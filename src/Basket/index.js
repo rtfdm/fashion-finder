@@ -36,7 +36,7 @@ const ListContainer = styled.div`
 `
 
 const ArrowMargin = {
-  marginLeft: '25px'
+  marginLeft: '25px',
 }
 
 const StyledLookPageLink = styled(LookPageLink)``
