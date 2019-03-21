@@ -27,8 +27,6 @@ const LikeDismissButton = ({ className, id, IconComponent, color }) => {
       {<IconComponent color={color} size="32" />}
     </div>
   )
-<<<<<<< HEAD
-=======
 }
 
 const LookBookLink = ({ className, id, IconComponent, color }) => {
@@ -40,7 +38,6 @@ const LookBookLink = ({ className, id, IconComponent, color }) => {
       </div>
     </Link>
   )
->>>>>>> 7320be023b4ffb9e17e12c195a358d03dc3f7122
 }
 
 const StyledLikeDismissButton = styled(LikeDismissButton)`
@@ -56,11 +53,8 @@ const StyledLikeDismissButton = styled(LikeDismissButton)`
 
 const ButtonContainer = styled.div`
   display: flex;
-<<<<<<< HEAD
   justify-content: center;
-=======
   width: min-content;
->>>>>>> 7320be023b4ffb9e17e12c195a358d03dc3f7122
   margin: 0 auto;
   margin-top: 40px;
 `
