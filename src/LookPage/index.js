@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { X, Check } from 'react-feather'
+import { X, Check, Gift } from 'react-feather'
+import { Link } from 'react-router-dom'
 
 const LookImage = ({ src, className }) => {
   return <img className={className} id="displayed-look" src={src} />
@@ -26,6 +27,20 @@ const LikeDismissButton = ({ className, id, IconComponent, color }) => {
       {<IconComponent color={color} size="32" />}
     </div>
   )
+<<<<<<< HEAD
+=======
+}
+
+const LookBookLink = ({ className, id, IconComponent, color }) => {
+  return (
+    <Link to="/lookbook">
+      <div className={className} id={id}>
+        {<IconComponent color={color} size="20" />}
+        <br />Your lookbook
+      </div>
+    </Link>
+  )
+>>>>>>> 7320be023b4ffb9e17e12c195a358d03dc3f7122
 }
 
 const StyledLikeDismissButton = styled(LikeDismissButton)`
@@ -41,7 +56,11 @@ const StyledLikeDismissButton = styled(LikeDismissButton)`
 
 const ButtonContainer = styled.div`
   display: flex;
+<<<<<<< HEAD
   justify-content: center;
+=======
+  width: min-content;
+>>>>>>> 7320be023b4ffb9e17e12c195a358d03dc3f7122
   margin: 0 auto;
   margin-top: 40px;
 `
@@ -49,6 +68,7 @@ const ButtonContainer = styled.div`
 const LookPage = () => {
   return (
     <div>
+      <LookBookLink id="lookbook" IconComponent={Gift} color="#EE8CA3" />
       <StyledLookImage src="https://i.imgur.com/n1IqG2c.jpg" />
       <ButtonContainer>
         <StyledLikeDismissButton
