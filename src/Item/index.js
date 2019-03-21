@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const ListImageStyle = {
   borderRadius: '5px',
+  maxWidth: '100%',
 }
 
 const ListItem = ({ className, src, name, desc, price, size, status }) => {
@@ -22,7 +23,6 @@ const StyledListItem = styled(ListItem)`
   list-style-type: none;
   width: 300px;
   padding: 10px;
-  margin-top: 50px;
   box-shadow: 0px 4px 20px rgba(79, 79, 79, 0.25);
   border-radius: 5px;
 `
