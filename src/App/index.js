@@ -6,6 +6,7 @@ import 'normalize.css'
 
 import LookPage from '../LookPage'
 import LookInfo from '../LookInfo'
+import Basket from '../Basket'
 
 const GlobalStyles = createGlobalStyle`
   * {
