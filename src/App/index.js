@@ -9,7 +9,6 @@ import Basket from '../Basket'
 export default () => (
   <BrowserRouter>
     <div>
-      <GlobalStyles />
       <Route exact={true} path="/" render={props => <LookPage />} />
       <Route exact={true} path="/lookbook" render={props => <Basket />} />
     </div>
