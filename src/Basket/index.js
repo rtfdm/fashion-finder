@@ -2,10 +2,8 @@ import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import { ArrowLeft } from 'react-feather'
 import { Link } from 'react-router-dom'
-// import basketItems from './sampleBasketItems'
 import basketItems from './sampleitems'
-
-// const MyBasket = basketItems
+import Item from '../Item/index'
 
 const LookPageLink = ({ className, id, IconComponent, color }) => {
   return (
@@ -42,16 +40,14 @@ const ArrowMargin = {
 const StyledLookPageLink = styled(LookPageLink)``
 
 class Basket extends Component {
-  state = { MyBasket: {} }  
-
+  state = { MyBasket: {} }
 
   componentDidMount() {
-    this.setState( { MyBasket: basketItems })
+    this.setState({ MyBasket: basketItems })
   }
 
-
   render() {
-  return (
+    return (
       <Container>
         <StyledLookPageLink
           id="lookpage"
@@ -59,37 +55,16 @@ class Basket extends Component {
           color="#EE8CA3"
         />
         <h1>Your Lookbook</h1>
-      <ul>
-        { Object.keys(this.state.MyBasket).map(key => {
-          
-          return <li key = {key}>
-              {this.state.MyBasket[key].name}  
-              {this.state.MyBasket[key].price}
-            
-          </li>
-        console.log(this.state.MyBasket[key]) }
-        ) }
-      </ul>
+        <ul>
+          <ListContainer>
+            {Object.keys(this.state.MyBasket).map(key => (
+              <Item key={key} details={this.state.MyBasket[key]} />
+            ))}
+          </ListContainer>
+        </ul>
       </Container>
-  )
+    )
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default Basket
