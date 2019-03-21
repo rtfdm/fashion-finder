@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import { ArrowLeft } from 'react-feather'
 import { Link } from 'react-router-dom'
-import basketItems from './sampleitems'
+import basketItems from './sampleItems'
 import Item from '../Item/index'
 
 const LookPageLink = ({ className, id, IconComponent, color }) => {
