@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
-import { ArrowLeft } from 'react-feather'
+import { ArrowLeft, ShoppingBag } from 'react-feather'
 import { Link } from 'react-router-dom'
 import basketItems from './sampleItems'
 import Item from '../Item/index'
@@ -31,7 +31,7 @@ const ListContainer = styled.div`
   padding: 0;
   margin: 0;
   list-style: none;
-  margin-bottom: 80px;
+  margin-bottom: 120px;
 
 `
 
@@ -50,7 +50,7 @@ const FooterStyling = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50px;
+  height: 70px;
   background-color: #000000;
   opacity: 0.8;
   padding: 10px;
@@ -59,9 +59,24 @@ const FooterStyling = styled.div`
   min-width: 80vw;
 `
 
-const ButtonStyle = {
-  borderRadius: '25px',
+const BuyButton = ({ className, id, IconComponent, color }) => {
+  return (
+    <div className={className} id={id}>
+      {<IconComponent color={color} size="32" />}
+    </div>
+  )
 }
+
+const StyledBuyButton = styled(BuyButton)`
+  box-shadow: 0px 4px 20px rgba(100, 100, 100, 100);
+  border-radius: 100px;
+  max-height: 62px;
+  padding: 10px;
+  max-width: 60px;
+  margin: 0 auto;
+`
+
+
 
 const ArrowMargin = {
   marginLeft: '25px',
@@ -100,7 +115,11 @@ class Basket extends Component {
         </ul>   
         <FooterStyling>
           <footer>
-            <button style={ButtonStyle}>Get the looks</button>
+            <StyledBuyButton
+              id="buy-button"
+              IconComponent={ShoppingBag}
+              color="#ffff"
+            />
           </footer>
         </FooterStyling>
       </Container>
