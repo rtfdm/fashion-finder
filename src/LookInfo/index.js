@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'react-feather'
 
 const BackButton = ({ IconComponent, className }) => (
-  <Link to="/" id="button" className={className}>
+  <Link to="/" id="back-button" className={className}>
     <div>{<IconComponent size="24" color="#838383" />}</div>
     <div>Back</div>
   </Link>

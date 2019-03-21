@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { X, Check } from 'react-feather'
+import { Link } from 'react-router-dom'
 
 const LookImage = ({ src, className }) => {
-  return <img className={className} id="displayed-look" src={src} />
+  return (
+    <Link to="/lookinfo" id="look-details-button">
+      <img className={className} id="displayed-look" src={src} />
+    </Link>
+  )
 }
 
 const StyledLookImage = styled(LookImage)`
