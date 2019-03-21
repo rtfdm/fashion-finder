@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
-import { createGlobalStyle } from 'styled-components'
 
 import LookPage from '../LookPage'
 import Basket from '../Basket'
