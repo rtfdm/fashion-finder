@@ -1,24 +1,29 @@
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+
 import { ArrowLeft } from 'react-feather'
 
 const BackButton = ({ IconComponent, className }) => (
-  <div id="button" className={className}>
+  <Link to="/" id="button" className={className}>
     <div>{<IconComponent size="24" color="#838383" />}</div>
     <div>Back</div>
-  </div>
+  </Link>
 )
 
 const StyledBackButton = styled(BackButton)`
   display: grid;
   grid-template-columns: min-content min-content;
   grid-column-gap: 10px;
+  width: min-content;
   align-items: center;
   font-size: 18px;
   color: #838383;
   margin-top: -35px;
-  padding: 0 0 50px 0;
+  margin: 0 0 50px 0;
   transition: all ease 0.5s;
+
+  text-decoration: none;
 
   @media only screen and (max-width: 800px) {
     margin: 0;
