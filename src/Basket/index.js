@@ -33,6 +33,17 @@ const ListContainer = styled.div`
   list-style: none;
 `
 
+const HeaderStyle = styled.div`
+  max-width: 1200px;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-left: 50px;
+  margin: 0;
+  list-style: none;
+`
+
 const ArrowMargin = {
   marginLeft: '25px',
 }
@@ -49,14 +60,16 @@ class Basket extends Component {
   render() {
     return (
       <Container>
-        <StyledLookPageLink
-          id="lookpage"
-          IconComponent={ArrowLeft}
-          color="#EE8CA3"
-        />
-        <h1>Your Lookbook</h1>
+        <HeaderStyle>
+          <StyledLookPageLink
+            id="lookpage"
+            IconComponent={ArrowLeft}
+            color="#EE8CA3"
+          />
+          <h1 >Your Lookbook</h1>
+        </HeaderStyle>
         <ul>
-          <ListContainer>
+        <ListContainer>
             {Object.keys(this.state.MyBasket).map(key => (
               <Item key={key} details={this.state.MyBasket[key]} />
             ))}
