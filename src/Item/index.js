@@ -1,10 +1,14 @@
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 
+const ListImageStyle = {
+  borderRadius: '5px',
+}
+
 const ListItem = ({ className, src, name, desc, price, size, status }) => {
   return (
     <li className={className}>
-      <img src={src} alt={name} />
+      <img src={src} alt={name} style={ListImageStyle} />
       <h3>{name}</h3>
       <p>{desc}</p>
       <p>Price: {price}</p>
@@ -20,6 +24,7 @@ const StyledListItem = styled(ListItem)`
   padding: 10px;
   margin-top: 50px;
   box-shadow: 0px 4px 20px rgba(79, 79, 79, 0.25);
+  border-radius: 5px;
 `
 
 class Item extends Component {
