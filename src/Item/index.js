@@ -39,6 +39,11 @@ const StyledListItem = styled(ListItem)`
   box-shadow: 0px 4px 20px rgba(79, 79, 79, 0.25);
   border-radius: 5px;
   position: relative;
+
+  ${StyledListItem}:hover {
+    background-color: #f7f4f4;
+    cursor: pointer;
+  }
 `
 
 const DeleteButton = ({ className, id, IconComponent, color }) => {
