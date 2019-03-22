@@ -53,7 +53,6 @@ const FooterStyling = styled.div`
   left: 0;
   right: 0;
   height: 70px;
-  // background-color: #000000;
   opacity: 0.8;
   padding: 10px;
   color: #ffff
@@ -85,10 +84,6 @@ const ArrowMargin = {
   marginLeft: '25px',
 }
 
-const StyledLookPageLink = styled(LookPageLink)`
- 
-`
-
 class Basket extends Component {
   state = { MyBasket: {} }
 
@@ -100,7 +95,7 @@ class Basket extends Component {
     return (
       <Container>
         <HeaderStyle>
-          <StyledLookPageLink
+          <LookPageLink
             id="lookpage"
             IconComponent={ArrowLeft}
             color="#EE8CA3"
@@ -117,13 +112,11 @@ class Basket extends Component {
           </ListContainer>
         </ul>   
         <FooterStyling>
-          {/* <footer> */}
             <StyledBuyButton
               id="buy-button"
               IconComponent={ShoppingBag}
               color="#ffff"
             />
-          {/* </footer> */}
         </FooterStyling>
       </Container>
     )
