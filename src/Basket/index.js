@@ -46,12 +46,14 @@ const HeaderStyle = styled.div`
   list-style: none;
 `
 const FooterStyling = styled.div`
+  display: grid;
+  grid-template-columns: repeat(11, 2fr);
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   height: 70px;
-  background-color: #000000;
+  // background-color: #000000;
   opacity: 0.8;
   padding: 10px;
   color: #ffff
@@ -68,11 +70,12 @@ const BuyButton = ({ className, id, IconComponent, color }) => {
 }
 
 const StyledBuyButton = styled(BuyButton)`
+  grid-column: 6;
+  background-color: #A6BEFA;
   box-shadow: 0px 4px 20px rgba(100, 100, 100, 100);
   border-radius: 100px;
   max-height: 62px;
   padding: 10px;
-  max-width: 60px;
   margin: 0 auto;
 `
 
@@ -114,13 +117,13 @@ class Basket extends Component {
           </ListContainer>
         </ul>   
         <FooterStyling>
-          <footer>
+          {/* <footer> */}
             <StyledBuyButton
               id="buy-button"
               IconComponent={ShoppingBag}
               color="#ffff"
             />
-          </footer>
+          {/* </footer> */}
         </FooterStyling>
       </Container>
     )
