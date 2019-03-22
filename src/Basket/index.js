@@ -21,9 +21,8 @@ const StyledBackButton = styled(BackButton)`
   font-size: 18px;
   color: #838383;
   margin-top: -35px;
-  margin: 0 0 50px 0;
+  margin: 10px 0;
   transition: all ease 0.5s;
-
   text-decoration: none;
 
   @media only screen and (max-width: 800px) {
@@ -83,7 +82,6 @@ const HeaderStyle = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding-left: 50px;
   margin: 0;
   list-style: none;
 `
