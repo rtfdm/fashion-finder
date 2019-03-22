@@ -23,15 +23,12 @@ const Container = styled.div`
 `
 
 const ListContainer = styled.div`
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
-  // grid-template-columns: repeat(3, 1fr);
-  // align-items: stretch;
-  // grid-template-rows: auto;
-  // grid-gap: 10px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: stretch;
+  grid-template-rows: auto;
+  grid-gap: 40px;
   max-width: 1200px;
   background-color: #fff;
   padding: 0;
@@ -75,15 +72,13 @@ const BuyButton = ({ className, id, IconComponent, color }) => {
 
 const StyledBuyButton = styled(BuyButton)`
   grid-column: 6;
-  background-color: #A6BEFA;
+  background-color: #a6befa;
   box-shadow: 0px 4px 20px rgba(100, 100, 100, 100);
   border-radius: 100px;
   max-height: 62px;
   padding: 10px;
   margin: 0 auto;
 `
-
-
 
 const ArrowMargin = {
   marginLeft: '25px',
@@ -107,7 +102,7 @@ class Basket extends Component {
           />
         </HeaderStyle>
         <HeaderStyle>
-          <h1 >Your Lookbook</h1>
+          <h1>Your Lookbook</h1>
         </HeaderStyle>
         <ul>
           <ListContainer>
@@ -115,13 +110,13 @@ class Basket extends Component {
               <Item key={key} details={this.state.MyBasket[key]} />
             ))}
           </ListContainer>
-        </ul>  
+        </ul>
         <FooterStyling>
-            <StyledBuyButton
-              id="buy-button"
-              IconComponent={ShoppingBag}
-              color="#ffff"
-            />
+          <StyledBuyButton
+            id="buy-button"
+            IconComponent={ShoppingBag}
+            color="#ffff"
+          />
         </FooterStyling>
       </Container>
     )
