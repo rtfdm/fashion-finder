@@ -13,8 +13,6 @@ const ListItem = ({
   name,
   desc,
   price,
-  size,
-  status,
   DeleteButton,
   InfoButton,
 }) => {
@@ -30,8 +28,6 @@ const ListItem = ({
       <h3>{name}</h3>
       <p>{desc}</p>
       <p>Price: {price}</p>
-      <p>Size: {size}</p>
-      <p>Status: {status} </p>
       <DeleteButton />
       <InfoButton />
     </li>
@@ -100,8 +96,6 @@ class Item extends Component {
           name={name}
           desc={desc}
           price={price}
-          size={size}
-          status={status}
           DeleteButton={props => (
             <StyledDeleteButton
               IconComponent={XCircle}
