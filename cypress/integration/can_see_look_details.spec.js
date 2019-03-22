@@ -12,6 +12,6 @@ describe('User can see Look Details', () => {
   })
   it('Shows a back button', () => {
     cy.visit('http://localhost:1234/lookinfo')
-    cy.get('#button')
+    cy.get('#back-button')
   })
 })

@@ -16,6 +16,9 @@
   },
   "homepage": "https://github.com/rtfdm/fashion-finder#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-syntax-class-properties": "^7.2.0",
     "cypress": "^3.2.0",
     "eslint": "^5.15.2",
     "eslint-plugin-cypress": "^2.2.1",
