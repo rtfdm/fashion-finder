@@ -23,16 +23,21 @@ const Container = styled.div`
 `
 
 const ListContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 40px;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-columns: repeat(3, 1fr);
+  // align-items: stretch;
+  // grid-template-rows: auto;
+  // grid-gap: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   max-width: 1200px;
   background-color: #fff;
   padding: 0;
   margin: 0;
   list-style: none;
   margin-bottom: 120px;
-
 `
 
 const HeaderStyle = styled.div`
@@ -110,7 +115,7 @@ class Basket extends Component {
               <Item key={key} details={this.state.MyBasket[key]} />
             ))}
           </ListContainer>
-        </ul>   
+        </ul>  
         <FooterStyling>
             <StyledBuyButton
               id="buy-button"
