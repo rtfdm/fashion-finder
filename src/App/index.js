@@ -6,6 +6,7 @@ import 'normalize.css'
 
 import LookPage from '../LookPage'
 import LookInfo from '../LookInfo'
+import Basket from '../Basket'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -32,6 +33,7 @@ export default () => (
       <GlobalStyles />
       <Route exact={true} path="/" render={props => <LookPage />} />
       <Route exact={true} path="/lookinfo" render={props => <LookInfo />} />
+      <Route exact={true} path="/lookbook" render={props => <Basket />} />
     </div>
   </BrowserRouter>
 )

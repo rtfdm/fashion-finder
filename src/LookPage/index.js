@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { X, Check } from 'react-feather'
+import { X, Check, Gift } from 'react-feather'
 import { Link } from 'react-router-dom'
 
 const LookImage = ({ src, lookId, className }) => {
@@ -44,6 +44,17 @@ const LikeDismissButton = ({
   )
 }
 
+const LookBookLink = ({ className, id, IconComponent, color }) => {
+  return (
+    <Link to="/lookbook">
+      <div className={className} id={id}>
+        {<IconComponent color={color} size="20" />}
+        <br />Your lookbook
+      </div>
+    </Link>
+  )
+}
+
 const StyledLikeDismissButton = styled(LikeDismissButton)`
   box-shadow: 0px 4px 20px rgba(79, 79, 79, 0.25);
   border-radius: 100px;
@@ -58,6 +69,7 @@ const StyledLikeDismissButton = styled(LikeDismissButton)`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
+  width: min-content;
   margin: 0 auto;
   margin-top: 40px;
 `
