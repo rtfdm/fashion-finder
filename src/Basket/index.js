@@ -5,6 +5,33 @@ import { Link } from 'react-router-dom'
 import basketItems from './sampleItems'
 import Item from '../Item/index'
 
+const BackButton = ({ IconComponent, className }) => (
+  <Link to="/" id="back-button" className={className}>
+    <div>{<IconComponent size="24" color="#838383" />}</div>
+    <div>Back</div>
+  </Link>
+)
+
+const StyledBackButton = styled(BackButton)`
+  display: grid;
+  grid-template-columns: min-content min-content;
+  grid-column-gap: 10px;
+  width: min-content;
+  align-items: center;
+  font-size: 18px;
+  color: #838383;
+  margin-top: -35px;
+  margin: 0 0 50px 0;
+  transition: all ease 0.5s;
+
+  text-decoration: none;
+
+  @media only screen and (max-width: 800px) {
+    margin: 0;
+    padding: 20px 10px;
+  }
+`
+
 const LookPageLink = ({ className, id, IconComponent, color }) => {
   return (
     <Link to="/">
@@ -19,22 +46,35 @@ const LookPageLink = ({ className, id, IconComponent, color }) => {
 
 const Container = styled.div`
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 const ListContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   align-items: stretch;
+  justify-items: center;
   grid-template-rows: auto;
   grid-gap: 40px;
-  max-width: 1200px;
+  max-width: 1000px;
   background-color: #fff;
   padding: 0;
   margin: 0;
   list-style: none;
   margin-bottom: 120px;
+
+  @media only screen and (max-width: 599px) {
+    margin: 0 auto;
+    grid-gap: 0px;
+  }
+
+  @media only screen and (max-width: 1029px) {
+    grid-gap: 40px;
+    justify-items: space-evenly;
+  }
 `
 
 const HeaderStyle = styled.div`
@@ -95,11 +135,7 @@ class Basket extends Component {
     return (
       <Container>
         <HeaderStyle>
-          <LookPageLink
-            id="lookpage"
-            IconComponent={ArrowLeft}
-            color="#EE8CA3"
-          />
+          <StyledBackButton IconComponent={ArrowLeft} />
         </HeaderStyle>
         <HeaderStyle>
           <h1>Your Lookbook</h1>
