@@ -1,14 +1,23 @@
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
-import { XCircle } from 'react-feather'
-
+import { XCircle, Info } from 'react-feather'
 
 const ListImageStyle = {
   borderRadius: '5px',
   maxWidth: '100%',
 }
 
-const ListItem = ({ className, src, name, desc, price, size, status, DeleteButton }) => {
+const ListItem = ({
+  className,
+  src,
+  name,
+  desc,
+  price,
+  size,
+  status,
+  DeleteButton,
+  InfoButton,
+}) => {
   return (
     <li className={className}>
       <img src={src} alt={name} style={ListImageStyle} />
@@ -17,7 +26,8 @@ const ListItem = ({ className, src, name, desc, price, size, status, DeleteButto
       <p>Price: {price}</p>
       <p>Size: {size}</p>
       <p>Status: {status} </p>
-      <DeleteButton/>
+      <DeleteButton />
+      <InfoButton />
     </li>
   )
 }
@@ -38,17 +48,35 @@ const DeleteButton = ({ className, id, IconComponent, color }) => {
     </div>
   )
 }
+const InfoButton = ({ className, id, IconComponent, color }) => {
+  return (
+    <div className={className} id={id}>
+      {<IconComponent color={color} size="32" />}
+    </div>
+  )
+}
 
 const StyledDeleteButton = styled(DeleteButton)`
-  background: rgba(255,255,255);
+  background: rgba(255, 255, 255);
   display: flex;
   border-radius: 100px;
   max-height: 35px;
   max-width: 35px;
   padding: 0px;
   position: absolute;
-  right: 5px;
-  top: 8px;
+  right: 14px;
+  top: 14px;
+`
+const StyledInfoButton = styled(InfoButton)`
+  background: rgba(235, 235, 235);
+  display: flex;
+  border-radius: 100px;
+  max-height: 35px;
+  max-width: 35px;
+  padding: 0px;
+  position: absolute;
+  right: 16px;
+  top: 252px;
 `
 
 class Item extends Component {
@@ -56,7 +84,6 @@ class Item extends Component {
     const { name, image, desc, price, size, status } = this.props.details
     return (
       <Fragment>
-         
         <StyledListItem
           src={image}
           name={name}
@@ -64,7 +91,16 @@ class Item extends Component {
           price={price}
           size={size}
           status={status}
-          DeleteButton={(props) => <StyledDeleteButton IconComponent={XCircle} color="#EE8CA3" id={name}/>}
+          DeleteButton={props => (
+            <StyledDeleteButton
+              IconComponent={XCircle}
+              color="#EE8CA3"
+              id={name}
+            />
+          )}
+          InfoButton={props => (
+            <StyledInfoButton IconComponent={Info} color="#000" id={name} />
+          )}
         />
       </Fragment>
     )
