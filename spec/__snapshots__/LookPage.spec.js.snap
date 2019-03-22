@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as expected 1`] = `
+<div>
+  <ForwardRef
+    lookId={1}
+    src="https://i.imgur.com/n1IqG2c.jpg"
+  />
+  <ForwardRef>
+    <ForwardRef
+      IconComponent={[Function]}
+      color="#EE8CA3"
+      id="dismiss-button"
+      onClick={[Function]}
+    />
+    <ForwardRef
+      IconComponent={[Function]}
+      color="#A6BEFA"
+      id="like-button"
+      onClick={[Function]}
+    />
+  </ForwardRef>
+</div>
+`;

@@ -10,7 +10,6 @@ const LookImage = ({ src, lookId, className }) => {
         className={className}
         id="displayed-look"
         src={src}
-        data-look-id={lookId}
       />
     </Link>
   )
@@ -91,7 +90,6 @@ class LookPage extends Component {
     const looks = this.state.looks
     looks.splice(0, 1)
     this.setState({ looks })
-    console.log(this.state.looks)
   }
 
   render() {
