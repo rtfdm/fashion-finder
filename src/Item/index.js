@@ -87,7 +87,7 @@ const StyledInfoButton = styled(InfoButton)`
   padding: 0px;
   position: absolute;
   right: 16px;
-  top: 252px;
+  top: 273px;
 `
 
 class Item extends Component {
