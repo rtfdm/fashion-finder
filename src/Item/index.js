@@ -20,7 +20,13 @@ const ListItem = ({
 }) => {
   return (
     <li className={className}>
-      <img src={src} alt={name} style={ListImageStyle} />
+      <img
+        src={src}
+        alt={name}
+        style={ListImageStyle}
+        width="300px"
+        height="300px"
+      />
       <h3>{name}</h3>
       <p>{desc}</p>
       <p>Price: {price}</p>
