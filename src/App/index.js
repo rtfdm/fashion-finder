@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
-import 'normalize.css'
+// import 'normalize.css'
 
 import LookPage from '../LookPage'
 import LookInfo from '../LookInfo'
@@ -26,12 +26,55 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-export default () => (
-  <BrowserRouter>
-    <div>
-      <GlobalStyles />
-      <Route exact={true} path="/" render={props => <LookPage />} />
-      <Route exact={true} path="/lookinfo" render={props => <LookInfo />} />
-    </div>
-  </BrowserRouter>
-)
+
+class App extends Component {
+  state = {
+    looks: [{
+        id: 2,
+        image: 'https://i.imgur.com/iKT9fl6.jpg',
+        brands: ['Pretty Little Thing'],
+        description: 'Womens wear',
+        price: '£199.99'
+      },
+      {
+        id: 3,
+        image: 'https://i.imgur.com/LPPxE3J.png',
+        brands: ['Ralph Lauren', 'Gucci'],
+        description: 'Kwaku posing',
+      },
+    ],
+    currentLook: {
+      id: 1,
+      image: 'https://i.imgur.com/n1IqG2c.jpg',
+      brands: ['Ralph Lauren', 'Armani'],
+      description: 'The description',
+      price: '£299.99'
+    },
+  }
+
+  handleClick = () => {
+    this.setState({ currentLook: this.state.looks[0] })
+    const looks = this.state.looks
+    looks.splice(0, 1)
+    this.setState({ looks })
+    console.log(123)
+  }
+
+  render() {
+    return(
+      <BrowserRouter>
+        <div>
+          <GlobalStyles />
+          <Route
+            exact={true}
+            path="/"
+            render={props => <LookPage currentLook={this.state.currentLook} handleClick={this.handleClick}/>} 
+          />
+          <Route exact={true} path="/lookinfo" render={props => <LookInfo currentLook={this.state.currentLook} />} />
+        </div>
+      </BrowserRouter>
+    )
+  }
+}
+
+export default App

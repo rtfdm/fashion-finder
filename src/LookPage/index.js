@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const LookImage = ({ src, lookId, className }) => {
   return (
-    <Link to="/lookinfo" id="look-details-button">
+    <Link to="/lookinfo" id="look-details-button" >
       <img
         className={className}
         id="displayed-look"
@@ -34,10 +34,10 @@ const LikeDismissButton = ({
   id,
   IconComponent,
   color,
-  onClick,
+  handleClick,
 }) => {
   return (
-    <div className={className} id={id} onClick={onClick}>
+    <div className={className} id={id} onClick={handleClick}>
       {<IconComponent color={color} size="32" />}
     </div>
   )
@@ -62,55 +62,55 @@ const ButtonContainer = styled.div`
 `
 
 class LookPage extends Component {
-  state = {
-    looks: [
-      {
-        id: 2,
-        image: 'https://i.imgur.com/iKT9fl6.jpg',
-        brands: ['Ralph Lauren', 'Armani'],
-        description: 'The description',
-      },
-      {
-        id: 3,
-        image: 'https://i.imgur.com/LPPxE3J.png',
-        brands: ['Ralph Lauren', 'Armani'],
-        description: 'The description',
-      },
-    ],
-    currentLook: {
-      id: 1,
-      image: 'https://i.imgur.com/n1IqG2c.jpg',
-      brands: ['Ralph Lauren', 'Armani'],
-      description: 'The description',
-    },
-  }
+  // state = {
+  //   looks: [
+  //     {
+  //       id: 2,
+  //       image: 'https://i.imgur.com/iKT9fl6.jpg',
+  //       brands: ['Ralph Lauren', 'Armani'],
+  //       description: 'The description',
+  //     },
+  //     {
+  //       id: 3,
+  //       image: 'https://i.imgur.com/LPPxE3J.png',
+  //       brands: ['Ralph Lauren', 'Armani'],
+  //       description: 'The description',
+  //     },
+  //   ],
+  //   currentLook: {
+  //     id: 1,
+  //     image: 'https://i.imgur.com/n1IqG2c.jpg',
+  //     brands: ['Ralph Lauren', 'Armani'],
+  //     description: 'The description',
+  //   },
+  // }
 
-  handleClick = () => {
-    this.setState({ currentLook: this.state.looks[0] })
-    const looks = this.state.looks
-    looks.splice(0, 1)
-    this.setState({ looks })
-  }
+  // handleClick = () => {
+  //   this.setState({ currentLook: this.state.looks[0] })
+  //   const looks = this.state.looks
+  //   looks.splice(0, 1)
+  //   this.setState({ looks })
+  // }
 
   render() {
     return (
       <div>
         <StyledLookImage
-          src={this.state.currentLook.image}
-          lookId={this.state.currentLook.id}
+          src={this.props.currentLook.image}
+          lookId={this.props.currentLook.id}
         />
         <ButtonContainer>
           <StyledLikeDismissButton
             id="dismiss-button"
             IconComponent={X}
             color="#EE8CA3"
-            onClick={this.handleClick}
+            handleClick={this.props.handleClick}
           />
           <StyledLikeDismissButton
             id="like-button"
             IconComponent={Check}
             color="#A6BEFA"
-            onClick={this.handleClick}
+            handleClick={this.props.handleClick}
           />
         </ButtonContainer>
       </div>
