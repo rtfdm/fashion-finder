@@ -65,8 +65,8 @@ export default class App extends Component {
     this.setState({ looks })
   }
 
-  addToBasket = currentLook => {
-    this.state.basket[currentLook.id] = currentLook
+  addToBasket = () => {
+    this.state.basket[this.state.currentLook.id] = this.state.currentLook
     this.handleClick()
   }
 

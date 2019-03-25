@@ -90,7 +90,7 @@ class LookPage extends Component {
             id="like-button"
             IconComponent={Check}
             color="#A6BEFA"
-            handleClick={this.props.handleClick}
+            handleClick={this.props.addToBasket}
           />
         </ButtonContainer>
       </div>
