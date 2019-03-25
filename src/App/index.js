@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
+import firebase, { db } from '../firebase'
 // import 'normalize.css'
 
 import LookPage from '../LookPage'
