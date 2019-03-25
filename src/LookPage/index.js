@@ -100,14 +100,10 @@ class LookPage extends Component {
   //   this.setState({ looks })
   // }
 
-  returnTo = () => {
-    return 2
-  }
-
   render() {
     return (
       <div>
-        <LookBookLink id="lookbook" IconComponent={Gift} color="#EE8CA3"/> 
+        <LookBookLink id="lookbook" IconComponent={Gift} color="#EE8CA3" />
         <StyledLookImage
           src={this.props.currentLook.image}
           lookId={this.props.currentLook.id}
