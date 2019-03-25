@@ -21,7 +21,14 @@ beforeEach(() => {
 
 test('Basket', () => {
   const renderedComponent = renderer
-    .create(<Basket basketItems={basketItems} />)
+    .create(<Basket basket={basketItems} />)
     .toJSON()
   expect(renderedComponent).toMatchSnapshot()
+})
+
+test('renderBasket', () => {
+  const component = renderer.create(<Basket basket={{}} />)
+  const componentInstance = component.getInstance()
+  const error = <h2>You don't have any basket items</h2>
+  expect(componentInstance.renderBasket()).toEqual(error)
 })
