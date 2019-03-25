@@ -6,6 +6,7 @@ import { createGlobalStyle } from 'styled-components'
 
 import LookPage from '../LookPage'
 import LookInfo from '../LookInfo'
+import Basket from '../Basket'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -15,17 +16,20 @@ const GlobalStyles = createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
+  ul {
+    padding: 0;
+  }
+
   #app {
     @media only screen and (min-width: 400px) {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: min-content;
-      justify-content: center;
+      // grid-template-columns: min-content;
+      // justify-content: center;
       align-items: center;
     }
   }
 `
-
 
 class App extends Component {
   state = {
@@ -71,10 +75,9 @@ class App extends Component {
             render={props => <LookPage currentLook={this.state.currentLook} handleClick={this.handleClick}/>} 
           />
           <Route exact={true} path="/lookinfo" render={props => <LookInfo currentLook={this.state.currentLook} />} />
+          <Route exact={true} path="/lookbook" render={props => <Basket />} />
         </div>
       </BrowserRouter>
     )
   }
 }
-
-export default App
