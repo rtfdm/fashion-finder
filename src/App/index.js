@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
-import firebase from 'firebase'
-import 'normalize.css'
+// import 'normalize.css'
 
 import LookPage from '../LookPage'
 import LookInfo from '../LookInfo'
@@ -33,17 +32,68 @@ const GlobalStyles = createGlobalStyle`
 `
 
 export default class App extends Component {
-  componentDidMount() {
-    const looks = firebase.database().ref('looks')
-    console.log(looks)
+  state = {
+    currentLook: {
+      id: 1,
+      image: 'https://i.imgur.com/iKT9fl6.jpg',
+      brands: ['Ralph Lauren', 'Armani'],
+      description: 'The description',
+      price: '£299.99',
+    },
   }
+
+  componentDidMount() {
+    const looksTable = db.collection('looks')
+    looksTable.get().then(snapshot => {
+      const looks = []
+      snapshot.docs.forEach(doc => {
+        const { brands, description, price, image } = doc.data()
+
+        const look = {
+          id: doc.id,
+          brands,
+          description,
+          price,
+          image,
+        }
+
+        looks.push(look)
+      })
+
+      this.setState({ currentLook: looks[0] })
+      looks.splice(0, 1)
+      this.setState({ looks })
+      console.log(this.state)
+    })
+  }
+
+  handleClick = () => {
+    this.setState({ currentLook: this.state.looks[0] })
+    const looks = this.state.looks
+    looks.splice(0, 1)
+    this.setState({ looks })
+  }
+
   render() {
     return (
       <BrowserRouter>
         <div>
           <GlobalStyles />
-          <Route exact={true} path="/" render={props => <LookPage />} />
-          <Route exact={true} path="/lookinfo" render={props => <LookInfo />} />
+          <Route
+            exact={true}
+            path="/"
+            render={props => (
+              <LookPage
+                currentLook={this.state.currentLook}
+                handleClick={this.handleClick}
+              />
+            )}
+          />
+          <Route
+            exact={true}
+            path="/lookinfo"
+            render={props => <LookInfo currentLook={this.state.currentLook} />}
+          />
           <Route exact={true} path="/lookbook" render={props => <Basket />} />
         </div>
       </BrowserRouter>

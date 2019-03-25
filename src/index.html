@@ -17,6 +17,7 @@
         messagingSenderId: process.env.MESSAGING_SENDER_ID,
       }
       firebase.initializeApp(config)
+      const db = firebase.firestore()
     </script>
   </head>
   <body>
