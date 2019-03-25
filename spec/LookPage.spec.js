@@ -34,6 +34,5 @@ test('render()', () => {
   const renderedComponent = renderer
     .create(<LookPage currentLook={currentLook} handleClick={handleClick} />)
     .toJSON()
-  console.log(renderedComponent)
   expect(renderedComponent).toMatchSnapshot()
 })
