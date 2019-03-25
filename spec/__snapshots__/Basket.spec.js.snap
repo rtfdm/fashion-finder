@@ -22,9 +22,7 @@ exports[`Basket 1`] = `
         className="sc-bdVaJa ikFPsF"
       >
         <img
-          alt="White-tailed deer"
           height="300px"
-          src="https://source.unsplash.com/300x300/?mountain"
           style={
             Object {
               "borderRadius": "5px",
@@ -33,19 +31,13 @@ exports[`Basket 1`] = `
           }
           width="300px"
         />
-        <h3>
-          White-tailed deer
-        </h3>
-        <p>
-          Hello hello this is an example
-        </p>
+        <h3 />
+        <p />
         <p>
           Price: 
-          $3.45
         </p>
         <div
           className="sc-bwzfXH jLfHiB"
-          id="White-tailed deer"
         >
           <svg
             fill="none"
@@ -79,7 +71,6 @@ exports[`Basket 1`] = `
         </div>
         <div
           className="sc-htpNat ipDBtf"
-          id="White-tailed deer"
         >
           <svg
             fill="none"
@@ -116,9 +107,7 @@ exports[`Basket 1`] = `
         className="sc-bdVaJa ikFPsF"
       >
         <img
-          alt="European badger"
           height="300px"
-          src="https://source.unsplash.com/300x300/?house"
           style={
             Object {
               "borderRadius": "5px",
@@ -127,19 +116,13 @@ exports[`Basket 1`] = `
           }
           width="300px"
         />
-        <h3>
-          European badger
-        </h3>
-        <p>
-          Such a cool shirt
-        </p>
+        <h3 />
+        <p />
         <p>
           Price: 
-          $0.25
         </p>
         <div
           className="sc-bwzfXH jLfHiB"
-          id="European badger"
         >
           <svg
             fill="none"
@@ -173,7 +156,6 @@ exports[`Basket 1`] = `
         </div>
         <div
           className="sc-htpNat ipDBtf"
-          id="European badger"
         >
           <svg
             fill="none"
@@ -210,9 +192,7 @@ exports[`Basket 1`] = `
         className="sc-bdVaJa ikFPsF"
       >
         <img
-          alt="Loris is a really nice person who is a senior developer"
           height="300px"
-          src="https://source.unsplash.com/300x300/?fashion,clothing"
           style={
             Object {
               "borderRadius": "5px",
@@ -221,19 +201,13 @@ exports[`Basket 1`] = `
           }
           width="300px"
         />
-        <h3>
-          Loris is a really nice person who is a senior developer
-        </h3>
-        <p>
-          The year is 1987 and NASA launches the last of America's deep space probes. In a freak mishap, Ranger 3 and its pilot Captain William     'Buck' Rogers are blown out of their trajectory into an orbit which freezes     his life support system and returns Buck Rogers to Earth five hundred years later.
-        </p>
+        <h3 />
+        <p />
         <p>
           Price: 
-          $2.82
         </p>
         <div
           className="sc-bwzfXH jLfHiB"
-          id="Loris is a really nice person who is a senior developer"
         >
           <svg
             fill="none"
@@ -267,7 +241,6 @@ exports[`Basket 1`] = `
         </div>
         <div
           className="sc-htpNat ipDBtf"
-          id="Loris is a really nice person who is a senior developer"
         >
           <svg
             fill="none"
@@ -304,9 +277,7 @@ exports[`Basket 1`] = `
         className="sc-bdVaJa ikFPsF"
       >
         <img
-          alt="White-browed owl"
           height="300px"
-          src="https://source.unsplash.com/300x300/?dog"
           style={
             Object {
               "borderRadius": "5px",
@@ -315,19 +286,13 @@ exports[`Basket 1`] = `
           }
           width="300px"
         />
-        <h3>
-          White-browed owl
-        </h3>
-        <p>
-          -JKLASDJKASKDJAKL:SJDjajsdjajsdjasd
-        </p>
+        <h3 />
+        <p />
         <p>
           Price: 
-          $1.30
         </p>
         <div
           className="sc-bwzfXH jLfHiB"
-          id="White-browed owl"
         >
           <svg
             fill="none"
@@ -361,7 +326,6 @@ exports[`Basket 1`] = `
         </div>
         <div
           className="sc-htpNat ipDBtf"
-          id="White-browed owl"
         >
           <svg
             fill="none"
@@ -398,9 +362,7 @@ exports[`Basket 1`] = `
         className="sc-bdVaJa ikFPsF"
       >
         <img
-          alt="Coatimundi, ring-tailed"
           height="300px"
-          src="https://source.unsplash.com/300x300/?bicycles\`"
           style={
             Object {
               "borderRadius": "5px",
@@ -409,19 +371,13 @@ exports[`Basket 1`] = `
           }
           width="300px"
         />
-        <h3>
-          Coatimundi, ring-tailed
-        </h3>
-        <p>
-          LOrem Ipsum yo
-        </p>
+        <h3 />
+        <p />
         <p>
           Price: 
-          $8.30
         </p>
         <div
           className="sc-bwzfXH jLfHiB"
-          id="Coatimundi, ring-tailed"
         >
           <svg
             fill="none"
@@ -455,7 +411,6 @@ exports[`Basket 1`] = `
         </div>
         <div
           className="sc-htpNat ipDBtf"
-          id="Coatimundi, ring-tailed"
         >
           <svg
             fill="none"
@@ -492,9 +447,7 @@ exports[`Basket 1`] = `
         className="sc-bdVaJa ikFPsF"
       >
         <img
-          alt="Black swan"
           height="300px"
-          src="https://source.unsplash.com/300x300/?rocks"
           style={
             Object {
               "borderRadius": "5px",
@@ -503,19 +456,13 @@ exports[`Basket 1`] = `
           }
           width="300px"
         />
-        <h3>
-          Black swan
-        </h3>
-        <p>
-          :D :D :D :D :D :)
-        </p>
+        <h3 />
+        <p />
         <p>
           Price: 
-          $7.82
         </p>
         <div
           className="sc-bwzfXH jLfHiB"
-          id="Black swan"
         >
           <svg
             fill="none"
@@ -549,195 +496,6 @@ exports[`Basket 1`] = `
         </div>
         <div
           className="sc-htpNat ipDBtf"
-          id="Black swan"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="16"
-              y2="12"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="8"
-              y2="8"
-            />
-          </svg>
-        </div>
-      </li>
-      <li
-        className="sc-bdVaJa ikFPsF"
-      >
-        <img
-          alt="Test"
-          height="300px"
-          src="https://source.unsplash.com/300x300/?videogame"
-          style={
-            Object {
-              "borderRadius": "5px",
-              "maxWidth": "100%",
-            }
-          }
-          width="300px"
-        />
-        <h3>
-          Test
-        </h3>
-        <p>
-          Hello hello
-        </p>
-        <p>
-          Price: 
-          $7.82
-        </p>
-        <div
-          className="sc-bwzfXH jLfHiB"
-          id="Test"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#EE8CA3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="15"
-              x2="9"
-              y1="9"
-              y2="15"
-            />
-            <line
-              x1="9"
-              x2="15"
-              y1="9"
-              y2="15"
-            />
-          </svg>
-        </div>
-        <div
-          className="sc-htpNat ipDBtf"
-          id="Test"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="16"
-              y2="12"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="8"
-              y2="8"
-            />
-          </svg>
-        </div>
-      </li>
-      <li
-        className="sc-bdVaJa ikFPsF"
-      >
-        <img
-          alt="Test"
-          height="300px"
-          src="https://source.unsplash.com/300x300/?vintage"
-          style={
-            Object {
-              "borderRadius": "5px",
-              "maxWidth": "100%",
-            }
-          }
-          width="300px"
-        />
-        <h3>
-          Test
-        </h3>
-        <p>
-          Hello hello
-        </p>
-        <p>
-          Price: 
-          $7.82
-        </p>
-        <div
-          className="sc-bwzfXH jLfHiB"
-          id="Test"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#EE8CA3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="15"
-              x2="9"
-              y1="9"
-              y2="15"
-            />
-            <line
-              x1="9"
-              x2="15"
-              y1="9"
-              y2="15"
-            />
-          </svg>
-        </div>
-        <div
-          className="sc-htpNat ipDBtf"
-          id="Test"
         >
           <svg
             fill="none"
