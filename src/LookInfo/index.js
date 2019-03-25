@@ -67,19 +67,16 @@ const Price = styled.span`
   margin-top: 30px;
 `
 
-const LookDetails = ({ className }) => (
+const LookDetails = ({ className, brands, description, price }) => (
   <div className={className}>
     <Heading>Brands</Heading>
-    <Paragraph>Ralph Lauren</Paragraph>
+    <Paragraph>{brands.join(', ')}</Paragraph>
 
     <Heading>Description </Heading>
     <Paragraph>
-      Lorem Ipsum is simply dummy text of the printing and typesetting
-      industry.Lorem Ipsum has been the industry 's standard dummy text ever
-      since the 1500s, when an unknown printer took a galley of type and
-      scrambled it to make a type specimen book.
+      {description}
     </Paragraph>
-    <Price>£299.99</Price>
+    <Price>{price}</Price>
   </div>
 )
 
@@ -110,13 +107,17 @@ const InnerContainer = styled.div`
   }
 `
 
-const LookInfoPage = () => {
+const LookInfoPage = (props) => {
   return (
     <Container>
       <StyledBackButton IconComponent={ArrowLeft} />
       <InnerContainer>
-        <StyledLookImage src="https://i.imgur.com/n1IqG2c.jpg" />
-        <StyledLookDetails />
+        <StyledLookImage src={props.currentLook.image} />
+        <StyledLookDetails
+          brands={props.currentLook.brands}
+          description={props.currentLook.description}
+          price={props.currentLook.price}
+        />
       </InnerContainer>
     </Container>
   )
