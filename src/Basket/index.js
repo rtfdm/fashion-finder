@@ -123,10 +123,19 @@ const ArrowMargin = {
 }
 
 class Basket extends Component {
-  state = { MyBasket: {} }
+  _isBasketEmpty(object) {
+    if (Object.keys(object).length === 0) return true
+    return false
+  }
 
-  componentDidMount() {
-    this.setState({ MyBasket: basketItems })
+  renderBasket() {
+    if (this._isBasketEmpty(this.props.basket)) {
+      return <h2>You don't have any basket items</h2>
+    } else {
+      return Object.keys(this.props.basket).map(key => (
+        <Item key={key} details={this.props.basket[key]} />
+      ))
+    }
   }
 
   render() {
@@ -139,11 +148,7 @@ class Basket extends Component {
           <h1>Your Lookbook</h1>
         </HeaderStyle>
         <ul>
-          <ListContainer>
-            {Object.keys(this.state.MyBasket).map(key => (
-              <Item key={key} details={this.state.MyBasket[key]} />
-            ))}
-          </ListContainer>
+          <ListContainer>{this.renderBasket()}</ListContainer>
         </ul>
         <FooterStyling>
           <StyledBuyButton

@@ -55,6 +55,7 @@ export default class App extends Component {
       description: 'The description',
       price: '£299.99',
     },
+    basket: {}
   }
 
   handleClick = () => {
@@ -84,7 +85,11 @@ export default class App extends Component {
             path="/lookinfo"
             render={props => <LookInfo currentLook={this.state.currentLook} />}
           />
-          <Route exact={true} path="/lookbook" render={props => <Basket />} />
+          <Route
+            exact={true}
+            path="/lookbook"
+            render={props => <Basket basket={this.state.basket} />}
+          />
         </div>
       </BrowserRouter>
     )

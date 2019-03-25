@@ -88,7 +88,7 @@ const StyledInfoButton = styled(InfoButton)`
 
 class Item extends Component {
   render() {
-    const { name, image, desc, price, size, status } = this.props.details
+    const { name, image, desc, price } = this.props.details
     return (
       <Fragment>
         <StyledListItem
