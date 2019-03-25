@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
@@ -31,13 +31,17 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-export default () => (
-  <BrowserRouter>
-    <div>
-      <GlobalStyles />
-      <Route exact={true} path="/" render={props => <LookPage />} />
-      <Route exact={true} path="/lookinfo" render={props => <LookInfo />} />
-      <Route exact={true} path="/lookbook" render={props => <Basket />} />
-    </div>
-  </BrowserRouter>
-)
+export default class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          <GlobalStyles />
+          <Route exact={true} path="/" render={props => <LookPage />} />
+          <Route exact={true} path="/lookinfo" render={props => <LookInfo />} />
+          <Route exact={true} path="/lookbook" render={props => <Basket />} />
+        </div>
+      </BrowserRouter>
+    )
+  }
+}
