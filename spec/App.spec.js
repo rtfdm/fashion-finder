@@ -33,3 +33,10 @@ test('render()', () => {
   const renderedComponent = renderer.create(<App />).toJSON()
   expect(renderedComponent).toMatchSnapshot()
 })
+
+test('addToBasket()', () => {
+  const renderedComponent = renderer.create(<App />)
+  const componentInstance = renderedComponent.getInstance()
+  componentInstance.addToBasket(mockImage)
+  expect(componentInstance.state.basket).toEqual({ 1: mockImage })
+})
