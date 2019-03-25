@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
+import firebase from 'firebase'
 import 'normalize.css'
 
 import LookPage from '../LookPage'
@@ -32,6 +33,10 @@ const GlobalStyles = createGlobalStyle`
 `
 
 export default class App extends Component {
+  componentDidMount() {
+    const looks = firebase.database().ref('looks')
+    console.log(looks)
+  }
   render() {
     return (
       <BrowserRouter>
