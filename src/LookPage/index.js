@@ -109,6 +109,7 @@ class LookPage extends Component {
   render() {
     return (
       <div>
+        <LookBookLink id="lookbook" IconComponent={Gift} color="#EE8CA3"/> 
         <StyledLookImage
           src={this.state.currentLook.image}
           lookId={this.state.currentLook.id}
