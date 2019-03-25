@@ -1,9 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { render, fireEvent } from 'react-testing-library'
-import App from '../src/App'
 import LookPage from '../src/LookPage'
-import { separateMessageFromStack } from 'jest-message-util'
 
 require('react-router-dom')
 jest.mock('react-router-dom')
@@ -22,7 +19,7 @@ beforeEach(() => {
     (handleClick = jest.fn())
 })
 
-test('handleClick changes currentLook', () => {
+test('LookPage takes currentLook and handleClick()', () => {
   const component = renderer.create(
     <LookPage currentLook={currentLook} handleClick={handleClick} />
   )
@@ -37,6 +34,6 @@ test('render()', () => {
   const renderedComponent = renderer
     .create(<LookPage currentLook={currentLook} handleClick={handleClick} />)
     .toJSON()
-
+  console.log(renderedComponent)
   expect(renderedComponent).toMatchSnapshot()
 })
