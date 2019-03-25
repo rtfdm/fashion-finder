@@ -31,7 +31,7 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-class App extends Component {
+export default class App extends Component {
   state = {
     looks: [{
         id: 2,
