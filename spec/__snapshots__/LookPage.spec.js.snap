@@ -1,24 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders as expected 1`] = `
+exports[`render() 1`] = `
 <div>
-  <ForwardRef
-    lookId={1}
-    src="https://i.imgur.com/n1IqG2c.jpg"
-  />
-  <ForwardRef>
-    <ForwardRef
-      IconComponent={[Function]}
-      color="#EE8CA3"
+  <div
+    className="sc-htpNat bbTpGz"
+  >
+    <div
+      className="sc-bwzfXH bUkOeZ"
       id="dismiss-button"
-      onClick={[Function]}
-    />
-    <ForwardRef
-      IconComponent={[Function]}
-      color="#A6BEFA"
+      onClick={[MockFunction]}
+    >
+      <svg
+        fill="none"
+        height="32"
+        stroke="#EE8CA3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="18"
+          x2="6"
+          y1="6"
+          y2="18"
+        />
+        <line
+          x1="6"
+          x2="18"
+          y1="6"
+          y2="18"
+        />
+      </svg>
+    </div>
+    <div
+      className="sc-bwzfXH bUkOeZ"
       id="like-button"
-      onClick={[Function]}
-    />
-  </ForwardRef>
+      onClick={[MockFunction]}
+    >
+      <svg
+        fill="none"
+        height="32"
+        stroke="#A6BEFA"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="20 6 9 17 4 12"
+        />
+      </svg>
+    </div>
+  </div>
 </div>
 `;

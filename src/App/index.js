@@ -26,15 +26,15 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-
 class App extends Component {
   state = {
-    looks: [{
+    looks: [
+      {
         id: 2,
         image: 'https://i.imgur.com/iKT9fl6.jpg',
         brands: ['Pretty Little Thing'],
         description: 'Womens wear',
-        price: '£199.99'
+        price: '£199.99',
       },
       {
         id: 3,
@@ -48,7 +48,7 @@ class App extends Component {
       image: 'https://i.imgur.com/n1IqG2c.jpg',
       brands: ['Ralph Lauren', 'Armani'],
       description: 'The description',
-      price: '£299.99'
+      price: '£299.99',
     },
   }
 
@@ -57,20 +57,28 @@ class App extends Component {
     const looks = this.state.looks
     looks.splice(0, 1)
     this.setState({ looks })
-    console.log(123)
   }
 
   render() {
-    return(
+    return (
       <BrowserRouter>
         <div>
           <GlobalStyles />
           <Route
             exact={true}
             path="/"
-            render={props => <LookPage currentLook={this.state.currentLook} handleClick={this.handleClick}/>} 
+            render={props => (
+              <LookPage
+                currentLook={this.state.currentLook}
+                handleClick={this.handleClick}
+              />
+            )}
           />
-          <Route exact={true} path="/lookinfo" render={props => <LookInfo currentLook={this.state.currentLook} />} />
+          <Route
+            exact={true}
+            path="/lookinfo"
+            render={props => <LookInfo currentLook={this.state.currentLook} />}
+          />
         </div>
       </BrowserRouter>
     )

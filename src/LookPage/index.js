@@ -5,12 +5,8 @@ import { Link } from 'react-router-dom'
 
 const LookImage = ({ src, lookId, className }) => {
   return (
-    <Link to="/lookinfo" id="look-details-button" >
-      <img
-        className={className}
-        id="displayed-look"
-        src={src}
-      />
+    <Link to="/lookinfo" id="look-details-button">
+      <img className={className} id="displayed-look" src={src} />
     </Link>
   )
 }
@@ -91,6 +87,10 @@ class LookPage extends Component {
   //   looks.splice(0, 1)
   //   this.setState({ looks })
   // }
+
+  returnTo = () => {
+    return 2
+  }
 
   render() {
     return (
