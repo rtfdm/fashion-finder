@@ -2,6 +2,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import App from '../src/App'
+import '@babel/polyfill'
 
 // require('firebase')
 // jest.mock('firebase')
@@ -28,11 +29,8 @@ let mockSecondImage = {
   price: '£199.99',
 }
 
-test('handleClick changes currentLook', () => {
-  // f.firestore.mockResolvedValue('resp')
-  // const imp = () => ({ collection: 123 })
-  // f['firestore'] = jest.fn(imp)
-  const component = renderer.create(<App />)
+test('handleClick changes currentLook', async done => {
+  const component = await renderer.create(<App />)
   const componentInstance = component.getInstance()
   componentInstance.setState({
     currentLook: mockImage,
@@ -40,9 +38,11 @@ test('handleClick changes currentLook', () => {
   })
   componentInstance.handleClick()
   expect(componentInstance.state.currentLook).toEqual(mockSecondImage)
+  done()
 })
 
-test('render()', () => {
-  const renderedComponent = renderer.create(<App />).toJSON()
+test('render()', async done => {
+  const renderedComponent = await renderer.create(<App />).toJSON()
   expect(renderedComponent).toMatchSnapshot()
+  done()
 })
