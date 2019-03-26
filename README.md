@@ -1,8 +1,16 @@
 <h1 align="center">Fashion Finder</h1>
 
-<p align="center"><a href="https://fashion-finder-prod.firebaseapp.com/">Visit Fashion Tinder</a></p>
+Fashion Finder is the final project of Team RTFD,M (Read the Frackin' Docs, Man) from the January 2019 cohort of Makers Academy.<br />
+The team created a beautiful, simple-to-use and responsive application in React.JS to asssit designers with showcasing their fashion lines & styles. The approach for the project is as follows:
+- Objective: Create an ecommerce app with Tinder-like functionality to see and be inspired by fashion looks, allowing a user to "purchase" the look(s) they want through a payment gateway.
+- Code ownership across the team throughout the project.
+- Become thoroughly familiar with React and Firebase.
+- Maintain best Agile Practices throughout the project.
+
+<p align="center"><a href="https://fashion-finder-prod.firebaseapp.com/">Visit Fashion Finder</a></p>
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/b766c7ba67ddad5b94a2/maintainability)](https://codeclimate.com/github/rtfdm/fashion-finder/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/b766c7ba67ddad5b94a2/test_coverage)](https://codeclimate.com/github/rtfdm/fashion-finder/test_coverage) [![Build Status](https://travis-ci.com/rtfdm/fashion-finder.svg?branch=dev)](https://travis-ci.com/rtfdm/fashion-finder)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
 ## Getting Started
 
@@ -10,6 +18,8 @@ Clone repository: ` git clone git@github.com:rtfdm/fashion-finder.git`.
 Install dependencies: `npm install`
 
 ### Development
+
+Throughout our development of Fashion Finder, we used ESLint to make sure our code conformed to standard. You can run `eslint src/`. You may need to run `npm i eslint-plugin-react@latest --save-dev` or `npm i -g eslint-plugin-react@latest` first to make sure you have the React plugin installed. (The latter command installs the package globally).
 
 #### Serving
 
@@ -21,9 +31,15 @@ Hot reloading is enabled.
 
 #### Testing
 
-[Jest](https://parceljs.org/) and [React Testing Library](https://github.com/kentcdodds/react-testing-library) are being using for testing.
+[Jest](https://parceljs.org/) and [React Testing Library](https://github.com/kentcdodds/react-testing-library) are being using for unit testing.
 
-Use `npm run test` to run the test suits.
+Use `npm run test` to run the test suite.
+
+[Cypress](https://www.cypress.io/) is used for feature testing.
+
+Use `npm run cypress:open` to run the feature test suite.
+
+All the test suites run in our [CI environment](https://travis-ci.com/rtfdm/fashion-finder) as well.
 
 #### Building
 
@@ -42,3 +58,6 @@ Once installed, login and deploy:
 firebase login #enter details
 firebase deploy #deploys checkedout branch
 ```
+#### App Wireframe Overview 
+
+![System_Overview](docs/images/wireframe.jpg)
