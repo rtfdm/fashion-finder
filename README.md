@@ -1,7 +1,7 @@
 <h1 align="center">Fashion Finder</h1>
 
 Fashion Finder is the final project of Team RTFD,M (Read the Frackin' Docs, Man) from the January 2019 cohort of Makers Academy.<br />
-The team created a beautiful, simple-to-use and responsive application in React.JS to assit designers with showcasing their fashion lines & styles. The approach for the project is as follows:
+The team created a beautiful, simple-to-use and responsive application in React.JS to assist designers with showcasing their fashion lines & styles. The approach for the project is as follows:
 - Objective: Create an ecommerce app with Tinder-like functionality to see and be inspired by fashion looks, allowing a user to "purchase" the look(s) they want through a payment gateway.
 - Code ownership across the team throughout the project.
 - Become thoroughly familiar with React and Firebase.
