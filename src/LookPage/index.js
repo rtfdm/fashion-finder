@@ -44,7 +44,8 @@ const LookBookLink = ({ className, id, IconComponent, color }) => {
     <Link to="/lookbook">
       <div className={className} id={id}>
         {<IconComponent color={color} size="20" />}
-        <br />Your lookbook
+        <br />
+        Your lookbook
       </div>
     </Link>
   )
@@ -70,44 +71,10 @@ const ButtonContainer = styled.div`
 `
 
 class LookPage extends Component {
-  // state = {
-  //   looks: [
-  //     {
-  //       id: 2,
-  //       image: 'https://i.imgur.com/iKT9fl6.jpg',
-  //       brands: ['Ralph Lauren', 'Armani'],
-  //       description: 'The description',
-  //     },
-  //     {
-  //       id: 3,
-  //       image: 'https://i.imgur.com/LPPxE3J.png',
-  //       brands: ['Ralph Lauren', 'Armani'],
-  //       description: 'The description',
-  //     },
-  //   ],
-  //   currentLook: {
-  //     id: 1,
-  //     image: 'https://i.imgur.com/n1IqG2c.jpg',
-  //     brands: ['Ralph Lauren', 'Armani'],
-  //     description: 'The description',
-  //   },
-  // }
-
-  // handleClick = () => {
-  //   this.setState({ currentLook: this.state.looks[0] })
-  //   const looks = this.state.looks
-  //   looks.splice(0, 1)
-  //   this.setState({ looks })
-  // }
-
-  returnTo = () => {
-    return 2
-  }
-
   render() {
     return (
       <div>
-        <LookBookLink id="lookbook" IconComponent={Gift} color="#EE8CA3"/> 
+        <LookBookLink id="lookbook" IconComponent={Gift} color="#EE8CA3" />
         <StyledLookImage
           src={this.props.currentLook.image}
           lookId={this.props.currentLook.id}
@@ -123,7 +90,7 @@ class LookPage extends Component {
             id="like-button"
             IconComponent={Check}
             color="#A6BEFA"
-            handleClick={this.props.handleClick}
+            handleClick={this.props.addToBasket}
           />
         </ButtonContainer>
       </div>

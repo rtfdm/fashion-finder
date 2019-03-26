@@ -38,7 +38,6 @@ exports[`render() 1`] = `
     <div
       className="sc-bwzfXH bUkOeZ"
       id="like-button"
-      onClick={[MockFunction]}
     >
       <svg
         fill="none"

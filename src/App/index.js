@@ -55,7 +55,7 @@ export default class App extends Component {
       description: 'The description',
       price: '£299.99',
     },
-    basket: {}
+    basket: {},
   }
 
   handleClick = () => {
@@ -63,6 +63,11 @@ export default class App extends Component {
     const looks = this.state.looks
     looks.splice(0, 1)
     this.setState({ looks })
+  }
+
+  addToBasket = () => {
+    this.state.basket[this.state.currentLook.id] = this.state.currentLook
+    this.handleClick()
   }
 
   render() {
@@ -77,6 +82,7 @@ export default class App extends Component {
               <LookPage
                 currentLook={this.state.currentLook}
                 handleClick={this.handleClick}
+                addToBasket={this.addToBasket}
               />
             )}
           />
