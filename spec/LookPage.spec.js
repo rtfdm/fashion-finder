@@ -19,6 +19,8 @@ beforeEach(() => {
     (handleClick = jest.fn())
 })
 
+// afterAll(() => setTimeout(() => process.exit(), 1000))
+
 test('LookPage takes currentLook and handleClick()', () => {
   const component = renderer.create(
     <LookPage currentLook={currentLook} handleClick={handleClick} />

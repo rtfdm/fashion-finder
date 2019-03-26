@@ -3,17 +3,9 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import App from '../src/App'
 import '@babel/polyfill'
-
-// require('firebase')
-// jest.mock('firebase')
-
-// import f from '../src/firebase'
-// jest.mock('../src/firebase')
-
+import firebase from '../src/firebase'
 require('react-router-dom')
 jest.mock('react-router-dom')
-
-afterAll(() => setTimeout(() => process.exit(), 1000))
 
 let mockImage = {
   id: 1,
@@ -31,8 +23,12 @@ let mockSecondImage = {
   price: '£199.99',
 }
 
-test('handleClick changes currentLook', async done => {
-  const component = await renderer.create(<App />)
+afterAll(async () => {
+  await firebase.app().delete()
+})
+
+test('handleClick changes currentLook', () => {
+  const component = renderer.create(<App />)
   const componentInstance = component.getInstance()
   componentInstance.setState({
     currentLook: mockImage,
@@ -40,11 +36,9 @@ test('handleClick changes currentLook', async done => {
   })
   componentInstance.handleClick()
   expect(componentInstance.state.currentLook).toEqual(mockSecondImage)
-  done()
 })
 
-test('render()', async done => {
-  const renderedComponent = await renderer.create(<App />).toJSON()
-  expect(renderedComponent).toMatchSnapshot()
-  done()
+test('render()', () => {
+  const component = renderer.create(<App />).toJSON()
+  expect(component).toMatchSnapshot()
 })

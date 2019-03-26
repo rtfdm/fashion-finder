@@ -19,6 +19,8 @@ beforeEach(() => {
   }
 })
 
+// afterAll(() => setTimeout(() => process.exit(), 1000))
+
 test('Basket', () => {
   const renderedComponent = renderer
     .create(<Basket basket={basketItems} />)

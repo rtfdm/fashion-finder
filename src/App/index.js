@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 import firebase, { db } from '../firebase'
-// import 'normalize.css'
 
 import LookPage from '../LookPage'
 import LookInfo from '../LookInfo'
@@ -25,8 +24,6 @@ const GlobalStyles = createGlobalStyle`
     @media only screen and (min-width: 400px) {
       min-height: 100vh;
       display: grid;
-      // grid-template-columns: min-content;
-      // justify-content: center;
       align-items: center;
     }
   }
