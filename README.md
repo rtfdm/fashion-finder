@@ -1,7 +1,7 @@
 <h1 align="center">Fashion Finder</h1>
 
 Fashion Finder is the final project of Team RTFD,M (Read the Frackin' Docs, Man) from the January 2019 cohort of Makers Academy.<br />
-The team created a beautiful, simple-to-use and responsive application in React.JS to asssit designers with showcasing their fashion lines & styles. The approach for the project is as follows:
+The team created a beautiful, simple-to-use and responsive application in React.JS to assist designers with showcasing their fashion lines & styles. The approach for the project is as follows:
 - Objective: Create an ecommerce app with Tinder-like functionality to see and be inspired by fashion looks, allowing a user to "purchase" the look(s) they want through a payment gateway.
 - Code ownership across the team throughout the project.
 - Become thoroughly familiar with React and Firebase.
@@ -10,6 +10,7 @@ The team created a beautiful, simple-to-use and responsive application in React.
 <p align="center"><a href="https://fashion-finder-prod.firebaseapp.com/">Visit Fashion Finder</a></p>
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/b766c7ba67ddad5b94a2/maintainability)](https://codeclimate.com/github/rtfdm/fashion-finder/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/b766c7ba67ddad5b94a2/test_coverage)](https://codeclimate.com/github/rtfdm/fashion-finder/test_coverage) [![Build Status](https://travis-ci.com/rtfdm/fashion-finder.svg?branch=dev)](https://travis-ci.com/rtfdm/fashion-finder)
+<br />
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
 ## Getting Started
