@@ -13,6 +13,8 @@ import '@babel/polyfill'
 require('react-router-dom')
 jest.mock('react-router-dom')
 
+afterAll(() => setTimeout(() => process.exit(), 1000))
+
 let mockImage = {
   id: 1,
   image: 'https://i.imgur.com/n1IqG2c.jpg',
