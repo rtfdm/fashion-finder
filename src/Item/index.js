@@ -48,16 +48,16 @@ const StyledListItem = styled(ListItem)`
   }
 `
 
-const DeleteButton = ({ className, id, IconComponent, color }) => {
+const DeleteButton = ({ className, id, IconComponent, color, handleClick }) => {
   return (
-    <div className={className} id={id}>
+    <div className={className} id={id} onClick = {handleClick}>
       {<IconComponent color={color} size="32" />}
     </div>
   )
 }
-const InfoButton = ({ className, id, IconComponent, color }) => {
+const InfoButton = ({ className, id, IconComponent, color, handleClick }) => {
   return (
-    <div className={className} id={id}>
+    <div className={className} id={id} onClick ={handleClick}>
       {<IconComponent color={color} size="32" />}
     </div>
   )
@@ -87,20 +87,27 @@ const StyledInfoButton = styled(InfoButton)`
 `
 
 class Item extends Component {
+  
+  handleClick = () => {
+    this.props.removeFromBasket(this.props.details.id)
+  }
+  
   render() {
-    const { name, image, desc, price } = this.props.details
+    const { id, image, desc, price } = this.props.details
     return (
       <Fragment>
+
         <StyledListItem
           src={image}
-          name={name}
+          id={id}
           desc={desc}
           price={price}
           DeleteButton={props => (
             <StyledDeleteButton
               IconComponent={XCircle}
               color="#EE8CA3"
-              id={name}
+              id={id}
+              handleClick = {this.handleClick}
             />
           )}
           InfoButton={props => (

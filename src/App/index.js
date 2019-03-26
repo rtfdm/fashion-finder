@@ -70,6 +70,12 @@ export default class App extends Component {
     this.handleClick()
   }
 
+  removeFromBasket = (id) => {
+    const basket = this.state.basket
+    delete basket[id]
+    this.setState({ basket })
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -94,7 +100,7 @@ export default class App extends Component {
           <Route
             exact={true}
             path="/lookbook"
-            render={props => <Basket basket={this.state.basket} />}
+            render={props => <Basket removeFromBasket= {this.removeFromBasket} basket={this.state.basket} />}
           />
         </div>
       </BrowserRouter>

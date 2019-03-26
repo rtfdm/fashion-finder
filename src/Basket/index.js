@@ -133,7 +133,7 @@ class Basket extends Component {
       return <h2>You don't have any basket items</h2>
     } else {
       return Object.keys(this.props.basket).map(key => (
-        <Item key={key} details={this.props.basket[key]} />
+        <Item key={key} details={this.props.basket[key]} removeFromBasket={this.props.removeFromBasket} />
       ))
     }
   }
