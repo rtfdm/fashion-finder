@@ -33,12 +33,13 @@ export default class App extends Component {
   state = {
     currentLook: null,
     basket: {},
+    looks: []
   }
 
   componentDidMount() {
     const looksTable = db.collection('looks')
     looksTable
-      .orderBy('id')
+      // .orderBy('id')
       .get()
       .then(snapshot => {
         const looks = []
@@ -62,7 +63,7 @@ export default class App extends Component {
 
         this.setState({ currentLook: looks[0] })
         looks.splice(0, 1)
-        this.setState({ looks })
+        this.setState({ looks: looks })
       })
   }
 
