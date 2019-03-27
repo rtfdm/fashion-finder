@@ -1,6 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import LookPage from '../src/LookPage'
+import '@babel/polyfill'
 
 require('react-router-dom')
 jest.mock('react-router-dom')

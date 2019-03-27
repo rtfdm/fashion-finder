@@ -1,6 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import Basket from '../src/Basket'
+import '@babel/polyfill'
 import { exportAllDeclaration } from '@babel/types'
 import { JestEnvironment } from '@jest/environment'
 require('react-router-dom')
