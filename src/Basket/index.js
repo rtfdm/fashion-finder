@@ -88,10 +88,10 @@ const FooterStyling = styled.div`
   min-width: 80vw;
 `
 
-const BuyButton = ({ className, id, IconComponent, color }) => {
+const BuyButton = ({ className, id, IconComponent, color, totalPrice }) => {
   return (
-    <div className={className} id={id}>
-      {<IconComponent color={color} size="32" />}
+    <div className={className} id={id} totalPrice={totalPrice}>
+      {<IconComponent color={color} size="32" />} {totalPrice}
     </div>
   )
 }
@@ -121,9 +121,21 @@ class Basket extends Component {
       return <h2>You don't have any basket items</h2>
     } else {
       return Object.keys(this.props.basket).map(key => (
-        <Item key={key} details={this.props.basket[key]} removeFromBasket={this.props.removeFromBasket} />
+        <Item
+          key={key}
+          details={this.props.basket[key]}
+          removeFromBasket={this.props.removeFromBasket}
+        />
       ))
     }
+  }
+
+  totalPrice() {
+    let totalPrice = 0
+    Object.keys(this.props.basket).map(key => {
+      totalPrice += this.props.basket[key].price
+    })
+    return totalPrice
   }
 
   render() {
@@ -143,6 +155,7 @@ class Basket extends Component {
             id="buy-button"
             IconComponent={ShoppingBag}
             color="#ffff"
+            totalPrice={this.totalPrice()}
           />
         </FooterStyling>
       </Container>

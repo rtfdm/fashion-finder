@@ -38,7 +38,7 @@ export default class App extends Component {
       description: 'The description',
       price: '£299.99',
     },
-    basket: {},
+    basket: [],
   }
 
   componentDidMount() {
@@ -78,12 +78,13 @@ export default class App extends Component {
 
   addToBasket = () => {
     const basket = this.state.basket
-    basket[this.state.currentLook.id] = this.state.currentLook
+    // basket[this.state.currentLook.id] = this.state.currentLook
+    basket.push(this.state.currentLook)
     this.setState({ basket })
     this.handleClick()
   }
 
-  removeFromBasket = (id) => {
+  removeFromBasket = id => {
     const basket = this.state.basket
     delete basket[id]
     this.setState({ basket })
@@ -113,7 +114,12 @@ export default class App extends Component {
           <Route
             exact={true}
             path="/lookbook"
-            render={props => <Basket removeFromBasket= {this.removeFromBasket} basket={this.state.basket} />}
+            render={props => (
+              <Basket
+                removeFromBasket={this.removeFromBasket}
+                basket={this.state.basket}
+              />
+            )}
           />
         </div>
       </BrowserRouter>
