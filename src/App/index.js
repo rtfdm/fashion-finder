@@ -32,11 +32,11 @@ const GlobalStyles = createGlobalStyle`
 export default class App extends Component {
   state = {
     currentLook: {
-      id: 1,
+      id: 0,
       image: 'https://i.imgur.com/iKT9fl6.jpg',
-      brands: ['Ralph Lauren', 'Armani'],
-      description: 'The description',
-      price: '£299.99',
+      brands: ['None'],
+      description: 'A default description.',
+      price: '£0',
     },
     basket: {},
   }
@@ -65,7 +65,6 @@ export default class App extends Component {
       this.setState({ currentLook: looks[0] })
       looks.splice(0, 1)
       this.setState({ looks })
-      console.log(this.state)
     })
   }
 

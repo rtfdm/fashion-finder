@@ -2,9 +2,10 @@
   "name": "fashion-finder",
   "scripts": {
     "start": "parcel src/index.html",
+    "start:test": "TEST=true parcel src/index.html",
     "build": "parcel build src/index.html",
     "test": "TEST=true jest ",
-    "cypress:open": "TEST=true cypress open"
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",

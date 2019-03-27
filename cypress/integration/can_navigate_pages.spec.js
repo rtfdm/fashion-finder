@@ -1,4 +1,7 @@
 describe('User can navigate app', () => {
+  beforeEach(function() {
+    cy.reload()
+  })
   it('takes user to look details page', () => {
     cy.visit('http://localhost:1234/')
     cy.get('#look-details-button').click({ force: true })
