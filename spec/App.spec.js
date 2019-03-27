@@ -23,10 +23,6 @@ let mockSecondImage = {
   price: '£199.99',
 }
 
-if (process.env.TEST) {
-  console.log('working')
-}
-
 afterAll(async () => {
   await firebase.app().delete()
 })

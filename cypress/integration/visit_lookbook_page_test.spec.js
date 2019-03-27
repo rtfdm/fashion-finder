@@ -1,8 +1,4 @@
 describe('Navigation between look page and basket', () => {
-  beforeEach(function() {
-    cy.reload()
-  })
-
   it('can direct the user from look page to basket', () => {
     cy.visit('http://localhost:1234/')
     cy.get('#lookbook').click()
