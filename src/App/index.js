@@ -7,6 +7,7 @@ import firebase, { db } from '../firebase'
 import LookPage from '../LookPage'
 import LookInfo from '../LookInfo'
 import Basket from '../Basket'
+import Checkout from '../CheckoutPage'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -31,20 +32,9 @@ const GlobalStyles = createGlobalStyle`
 
 export default class App extends Component {
   state = {
-<<<<<<< HEAD
-    currentLook: {
-      id: 1,
-      image: 'https://i.imgur.com/iKT9fl6.jpg',
-      brands: ['Ralph Lauren', 'Armani'],
-      description: 'The description',
-      price: '£299.99',
-    },
-    basket: [],
-=======
     currentLook: null,
     basket: {},
-    looks: []
->>>>>>> 687bfad41038fd086c30a3978fd5bfc5c5975ee4
+    looks: [],
   }
 
   componentDidMount() {
@@ -87,8 +77,8 @@ export default class App extends Component {
 
   addToBasket = () => {
     const basket = this.state.basket
-    // basket[this.state.currentLook.id] = this.state.currentLook
-    basket.push(this.state.currentLook)
+    basket[this.state.currentLook.id] = this.state.currentLook
+    // basket.push(this.state.currentLook)
     this.setState({ basket })
     this.handleClick()
   }
@@ -97,6 +87,12 @@ export default class App extends Component {
     const basket = this.state.basket
     delete basket[id]
     this.setState({ basket })
+  }
+
+  resetState = () => {
+    const basket = {}
+    const currentLook = null
+    this.setState({ basket, currentLook })
   }
 
   render() {
@@ -125,6 +121,12 @@ export default class App extends Component {
                 basket={this.state.basket}
               />
             )}
+          />
+
+          <Route
+            exact={true}
+            path="/checkout"
+            render={props => <Checkout resetState={this.resetState} />}
           />
         </div>
       </BrowserRouter>
