@@ -31,18 +31,6 @@ const StyledBackButton = styled(BackButton)`
   }
 `
 
-const LookPageLink = ({ className, id, IconComponent, color }) => {
-  return (
-    <Link to="/">
-      <div className={className} id={id}>
-        {<IconComponent color={color} size="20" style={ArrowMargin} />}
-        <br />
-        Get inspired
-      </div>
-    </Link>
-  )
-}
-
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
