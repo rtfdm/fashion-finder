@@ -8,6 +8,10 @@ jest.mock('react-router-dom')
 
 let basketItems
 
+afterAll(async () => {
+  await firebase.app().delete()
+})
+
 beforeEach(() => {
   basketItems = {
     id: 1,

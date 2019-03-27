@@ -8,6 +8,10 @@ jest.mock('react-router-dom')
 let currentLook
 let handleClick
 
+afterAll(async () => {
+  await firebase.app().delete()
+})
+
 beforeEach(() => {
   ;(currentLook = {
     id: 1,
