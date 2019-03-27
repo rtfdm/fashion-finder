@@ -39,7 +39,7 @@ export default class App extends Component {
   componentDidMount() {
     const looksTable = db.collection('looks')
     looksTable
-      // .orderBy('id')
+      .orderBy('id')
       .get()
       .then(snapshot => {
         const looks = []
