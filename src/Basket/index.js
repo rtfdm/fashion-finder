@@ -90,8 +90,8 @@ const FooterStyling = styled.div`
 
 const BuyButton = ({ className, id, IconComponent, color, totalPrice }) => {
   return (
-    <div className={className} id={id} totalPrice={totalPrice}>
-      {<IconComponent color={color} size="32" />} {totalPrice}
+    <div className={className} id={id}>
+      {<IconComponent color={color} size="32" />} £{totalPrice}
     </div>
   )
 }
@@ -111,6 +111,9 @@ const ArrowMargin = {
 }
 
 class Basket extends Component {
+  state = {
+    basket: this.props.basket,
+  }
   _isBasketEmpty(object) {
     if (Object.keys(object).length === 0) return true
     return false
@@ -130,12 +133,12 @@ class Basket extends Component {
     }
   }
 
-  totalPrice() {
+  totalPrice(basket) {
     let totalPrice = 0
-    Object.keys(this.props.basket).map(key => {
-      totalPrice += this.props.basket[key].price
+    Object.keys(basket).map(key => {
+      totalPrice += basket[key].price
     })
-    return totalPrice
+    return (totalPrice / 100).toFixed(2)
   }
 
   render() {
@@ -155,7 +158,7 @@ class Basket extends Component {
             id="buy-button"
             IconComponent={ShoppingBag}
             color="#ffff"
-            totalPrice={this.totalPrice()}
+            totalPrice={this.totalPrice(this.state.basket)}
           />
         </FooterStyling>
       </Container>
