@@ -33,7 +33,7 @@ export default class App extends Component {
   state = {
     currentLook: {
       id: 1,
-      image: 'https://i.imgur.com/iKT9fl6.jpg',
+      image: 'https://gifimage.net/wp-content/uploads/2018/04/preloading-gif-1.gif',
       brands: ['Ralph Lauren', 'Armani'],
       description: 'The description',
       price: '£299.99',

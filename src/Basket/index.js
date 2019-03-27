@@ -91,7 +91,9 @@ const FooterStyling = styled.div`
 const BuyButton = ({ className, id, IconComponent, color }) => {
   return (
     <div className={className} id={id}>
+      <a href = "https://secure.checkout.visa.com/">
       {<IconComponent color={color} size="32" />}
+      </a>
     </div>
   )
 }
