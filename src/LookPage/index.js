@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import { X, Check, Gift } from 'react-feather'
 import { Link } from 'react-router-dom'
 
 const LookImage = ({ src, lookId, className }) => {
   return (
-    <Link to="/lookinfo" id="look-details-button">
+    <Link to={`/lookinfo/${lookId}`} id="look-details-button">
       <img className={className} id={lookId} src={src} />
     </Link>
   )
@@ -41,7 +41,7 @@ const LikeDismissButton = ({
 
 const LookBookLink = ({ className, id, IconComponent, color }) => {
   return (
-    <Link to="/lookbook">
+    <Link to="lookbook">
       <div className={className} id={id}>
         {<IconComponent color={color} size="20" />}
         <br />
@@ -74,11 +74,20 @@ class LookPage extends Component {
   render() {
     return (
       <div>
-        <LookBookLink id="lookbook" IconComponent={Gift} color="#EE8CA3" />
-        <StyledLookImage
-          src={this.props.currentLook.image}
-          lookId={this.props.currentLook.id}
-        />
+        {this.props.currentLook && (
+          <Fragment>
+            <LookBookLink
+              id="lookbook"
+              lookId={this.props.currentLook.id}
+              IconComponent={Gift}
+              color="#EE8CA3"
+            />
+            <StyledLookImage
+              src={this.props.currentLook.image}
+              lookId={this.props.currentLook.id}
+            />
+          </Fragment>
+        )}
         <ButtonContainer>
           <StyledLikeDismissButton
             id="dismiss-button"
@@ -97,12 +106,5 @@ class LookPage extends Component {
     )
   }
 }
-
-const StyledLookPage = styled(LookPage)`
-  /* display: grid;
-  justify-content: center;
-  grid-template-rows: min-content; */
-  /* justify-content: center; */
-`
 
 export default LookPage
