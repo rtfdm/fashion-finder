@@ -44,7 +44,6 @@ export default class App extends Component {
       .then(snapshot => {
         const looks = []
         snapshot.docs.forEach(doc => {
-          console.log(doc.data())
           const { brands, description, price, image } = doc.data()
 
           const look = {

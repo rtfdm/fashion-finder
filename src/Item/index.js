@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import { XCircle, Info } from 'react-feather'
+import { Link } from 'react-router-dom'
 
 const ListImageStyle = {
   borderRadius: '5px',
@@ -57,9 +58,11 @@ const DeleteButton = ({ className, id, IconComponent, color, handleClick }) => {
 }
 const InfoButton = ({ className, id, IconComponent, color, handleClick }) => {
   return (
+    <Link to={`/lookinfo/${id}`} id="look-info-button" >
     <div className={className} id={id} onClick ={handleClick}>
       {<IconComponent color={color} size="32" />}
     </div>
+    </Link>
   )
 }
 
@@ -96,7 +99,6 @@ class Item extends Component {
     const { id, image, desc, price } = this.props.details
     return (
       <Fragment>
-
         <StyledListItem
           src={image}
           id={id}
@@ -111,7 +113,7 @@ class Item extends Component {
             />
           )}
           InfoButton={props => (
-            <StyledInfoButton IconComponent={Info} color="#000" id={name} />
+            <StyledInfoButton IconComponent={Info} color="#000" id={id} />
           )}
         />
       </Fragment>
