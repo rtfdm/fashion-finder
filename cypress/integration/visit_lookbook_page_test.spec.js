@@ -11,6 +11,4 @@ describe('Navigation between look page and basket', () => {
     cy.get('#back-button').click()
     cy.url().should('eq', 'http://localhost:1234/')
   })
-
-
 })

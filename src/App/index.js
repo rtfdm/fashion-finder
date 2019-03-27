@@ -31,42 +31,39 @@ const GlobalStyles = createGlobalStyle`
 
 export default class App extends Component {
   state = {
-    currentLook: {
-      id: 1,
-      image: 'https://gifimage.net/wp-content/uploads/2018/04/preloading-gif-1.gif',
-      brands: ['Ralph Lauren', 'Armani'],
-      description: 'The description',
-      price: '£299.99',
-    },
+    currentLook: null,
     basket: {},
   }
 
   componentDidMount() {
     const looksTable = db.collection('looks')
-    looksTable.get().then(snapshot => {
-      const looks = []
-      snapshot.docs.forEach(doc => {
-        const { brands, description, price, image } = doc.data()
+    looksTable
+      .orderBy('id')
+      .get()
+      .then(snapshot => {
+        const looks = []
+        snapshot.docs.forEach(doc => {
+          console.log(doc.data())
+          const { brands, description, price, image } = doc.data()
 
-        const look = {
-          id: doc.id,
-          brands,
-          description,
-          price,
-          image,
-        }
+          const look = {
+            id: doc.id,
+            brands,
+            description,
+            price,
+            image,
+          }
 
-        looks.push(look)
-        looks.sort(function() {
-          return 0.5 - Math.random()
+          looks.push(look)
+          // looks.sort(function() {
+          //   return 0.5 - Math.random()
+          // })
         })
-      })
 
-      this.setState({ currentLook: looks[0] })
-      looks.splice(0, 1)
-      this.setState({ looks })
-      console.log(this.state)
-    })
+        this.setState({ currentLook: looks[0] })
+        looks.splice(0, 1)
+        this.setState({ looks })
+      })
   }
 
   handleClick = () => {
@@ -105,11 +102,7 @@ export default class App extends Component {
               />
             )}
           />
-          <Route
-            exact={true}
-            path="/lookinfo"
-            render={props => <LookInfo currentLook={this.state.currentLook} />}
-          />
+          <Route path="/lookinfo/:id/" component={LookInfo} />
           <Route
             exact={true}
             path="/lookbook"
