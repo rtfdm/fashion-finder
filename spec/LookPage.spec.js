@@ -1,6 +1,8 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import LookPage from '../src/LookPage'
+import firebase from '../src/firebase'
+
 import '@babel/polyfill'
 
 require('react-router-dom')

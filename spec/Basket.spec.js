@@ -2,8 +2,8 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import Basket from '../src/Basket'
 import '@babel/polyfill'
-import { exportAllDeclaration } from '@babel/types'
-import { JestEnvironment } from '@jest/environment'
+import firebase from '../src/firebase'
+
 require('react-router-dom')
 jest.mock('react-router-dom')
 
