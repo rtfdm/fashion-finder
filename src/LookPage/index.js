@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const LookImage = ({ src, lookId, className }) => {
   return (
     <Link to="/lookinfo" id="look-details-button">
-      <img className={className} id="displayed-look" src={src} />
+      <img className={className} id={lookId} src={src} />
     </Link>
   )
 }

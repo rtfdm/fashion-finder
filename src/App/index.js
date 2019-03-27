@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
-// import 'normalize.css'
+import firebase, { db } from '../firebase'
 
 import LookPage from '../LookPage'
 import LookInfo from '../LookInfo'
@@ -24,8 +24,6 @@ const GlobalStyles = createGlobalStyle`
     @media only screen and (min-width: 400px) {
       min-height: 100vh;
       display: grid;
-      // grid-template-columns: min-content;
-      // justify-content: center;
       align-items: center;
     }
   }
@@ -33,29 +31,42 @@ const GlobalStyles = createGlobalStyle`
 
 export default class App extends Component {
   state = {
-    looks: [
-      {
-        id: 2,
-        image: 'https://i.imgur.com/iKT9fl6.jpg',
-        brands: ['Pretty Little Thing'],
-        description: 'Womens wear',
-        price: '£199.99',
-      },
-      {
-        id: 3,
-        image: 'https://i.imgur.com/LPPxE3J.png',
-        brands: ['Ralph Lauren', 'Gucci'],
-        description: 'Kwaku posing',
-      },
-    ],
     currentLook: {
       id: 1,
-      image: 'https://i.imgur.com/n1IqG2c.jpg',
+      image: 'https://i.imgur.com/iKT9fl6.jpg',
       brands: ['Ralph Lauren', 'Armani'],
       description: 'The description',
       price: '£299.99',
     },
     basket: {},
+  }
+
+  componentDidMount() {
+    const looksTable = db.collection('looks')
+    looksTable.get().then(snapshot => {
+      const looks = []
+      snapshot.docs.forEach(doc => {
+        const { brands, description, price, image } = doc.data()
+
+        const look = {
+          id: doc.id,
+          brands,
+          description,
+          price,
+          image,
+        }
+
+        looks.push(look)
+        looks.sort(function() {
+          return 0.5 - Math.random()
+        })
+      })
+
+      this.setState({ currentLook: looks[0] })
+      looks.splice(0, 1)
+      this.setState({ looks })
+      console.log(this.state)
+    })
   }
 
   handleClick = () => {

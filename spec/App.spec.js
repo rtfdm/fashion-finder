@@ -1,7 +1,9 @@
+// test.todo('Please uncomment rest when determined working')
 import React from 'react'
 import renderer from 'react-test-renderer'
 import App from '../src/App'
-
+import '@babel/polyfill'
+import firebase from '../src/firebase'
 require('react-router-dom')
 jest.mock('react-router-dom')
 
@@ -21,17 +23,24 @@ let mockSecondImage = {
   price: '£199.99',
 }
 
+afterAll(async () => {
+  await firebase.app().delete()
+})
+
 test('handleClick changes currentLook', () => {
   const component = renderer.create(<App />)
   const componentInstance = component.getInstance()
-  componentInstance.setState({ currentLook: mockImage })
+  componentInstance.setState({
+    currentLook: mockImage,
+    looks: [mockSecondImage],
+  })
   componentInstance.handleClick()
   expect(componentInstance.state.currentLook).toEqual(mockSecondImage)
 })
 
 test('render()', () => {
-  const renderedComponent = renderer.create(<App />).toJSON()
-  expect(renderedComponent).toMatchSnapshot()
+  const component = renderer.create(<App />).toJSON()
+  expect(component).toMatchSnapshot()
 })
 
 test('addToBasket()', () => {
