@@ -135,7 +135,6 @@ class LookInfoPage extends Component {
     return (
       <Container>
         <StyledBackButton IconComponent={ArrowLeft} />
-        <p>working</p>
         {this.state.look && (
           <InnerContainer>
             <StyledLookImage src={this.state.look.image} />
