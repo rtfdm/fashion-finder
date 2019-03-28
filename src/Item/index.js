@@ -58,10 +58,10 @@ const DeleteButton = ({ className, id, IconComponent, color, handleClick }) => {
 }
 const InfoButton = ({ className, id, IconComponent, color, handleClick }) => {
   return (
-    <Link to={`/lookinfo/${id}`} id="look-info-button" >
-    <div className={className} id={id} onClick ={handleClick}>
-      {<IconComponent color={color} size="32" />}
-    </div>
+    <Link to={`/lookinfo/${id}`} id="look-info-button">
+      <div className={className} id={id} onClick={handleClick}>
+        {<IconComponent color={color} size="32" />}
+      </div>
     </Link>
   )
 }
@@ -78,7 +78,7 @@ const StyledDeleteButton = styled(DeleteButton)`
   top: 14px;
 `
 const StyledInfoButton = styled(InfoButton)`
-  background: rgba(235, 235, 235);
+  background: rgba(255, 255, 255);
   display: flex;
   border-radius: 100px;
   max-height: 35px;
