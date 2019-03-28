@@ -1,12 +1,17 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import Basket from '../src/Basket'
-import { exportAllDeclaration } from '@babel/types'
-import { JestEnvironment } from '@jest/environment'
+import '@babel/polyfill'
+import firebase from '../src/firebase'
+
 require('react-router-dom')
 jest.mock('react-router-dom')
 
 let basketItems
+
+afterAll(async () => {
+  await firebase.app().delete()
+})
 
 beforeEach(() => {
   basketItems = {

@@ -130,6 +130,11 @@ class LookInfoPage extends Component {
         })
       })
   }
+
+  componentWillUnmount() {
+    firebase.app().delete()
+  }
+
   render() {
     return (
       <Container>
