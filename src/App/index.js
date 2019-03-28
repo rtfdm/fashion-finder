@@ -21,6 +21,10 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   #app {
     @media only screen and (min-width: 400px) {
       min-height: 100vh;
