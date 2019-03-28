@@ -60,9 +60,9 @@ export default class App extends Component {
           }
 
           looks.push(look)
-          // looks.sort(function() {
-          //   return 0.5 - Math.random()
-          // })
+          looks.sort(function() {
+            return 0.5 - Math.random()
+          })
         })
 
         this.setState({ currentLook: looks[0] })
