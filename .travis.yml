@@ -14,10 +14,10 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+  - npm run start:test 
 script:
   - npm run build
   - npm run test
-  - npm run start:test 
   - $(npm bin)/cypress run --config baseUrl=http://localhost:1234
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
