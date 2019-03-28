@@ -75,7 +75,7 @@ const LookDetails = ({ className, brands, description, price }) => (
 
     <Heading>Description </Heading>
     <Paragraph>{description}</Paragraph>
-    <Price>{price}</Price>
+    <Price>£{(price / 100).toFixed(2)}</Price>
   </div>
 )
 
