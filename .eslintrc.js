@@ -4,7 +4,7 @@ module.exports = {
     es6: true,
     'cypress/globals': true,
   },
-  extends: 'eslint:recommended',
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',

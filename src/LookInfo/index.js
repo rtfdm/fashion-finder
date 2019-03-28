@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import firebase, { db } from '../firebase'
 
 import { ArrowLeft } from 'react-feather'
 
@@ -73,10 +74,8 @@ const LookDetails = ({ className, brands, description, price }) => (
     <Paragraph>{brands.join(', ')}</Paragraph>
 
     <Heading>Description </Heading>
-    <Paragraph>
-      {description}
-    </Paragraph>
-    <Price>{price}</Price>
+    <Paragraph>{description}</Paragraph>
+    <Price>£{(price / 100).toFixed(2)}</Price>
   </div>
 )
 
@@ -107,20 +106,48 @@ const InnerContainer = styled.div`
   }
 `
 
-const LookInfoPage = (props) => {
-  return (
-    <Container>
-      <StyledBackButton IconComponent={ArrowLeft} />
-      <InnerContainer>
-        <StyledLookImage src={props.currentLook.image} />
-        <StyledLookDetails
-          brands={props.currentLook.brands}
-          description={props.currentLook.description}
-          price={props.currentLook.price}
-        />
-      </InnerContainer>
-    </Container>
-  )
+class LookInfoPage extends Component {
+  state = {
+    look: null,
+  }
+
+  componentDidMount() {
+    const { id } = this.props.match.params
+    const looksTable = db.collection('looks')
+    looksTable
+      .doc(id)
+      .get()
+      .then(doc => {
+        const { brands, description, price, image } = doc.data()
+        this.setState({
+          look: {
+            id,
+            brands,
+            description,
+            price,
+            image,
+          },
+        })
+      })
+  }
+
+  render() {
+    return (
+      <Container>
+        <StyledBackButton IconComponent={ArrowLeft} />
+        {this.state.look && (
+          <InnerContainer>
+            <StyledLookImage src={this.state.look.image} />
+            <StyledLookDetails
+              brands={this.state.look.brands}
+              description={this.state.look.description}
+              price={this.state.look.price}
+            />
+          </InnerContainer>
+        )}
+      </Container>
+    )
+  }
 }
 
 export default LookInfoPage

@@ -23,6 +23,7 @@ exports[`Basket 1`] = `
       >
         <img
           height="300px"
+          src="https://i.imgur.com/iKT9fl6.jpg"
           style={
             Object {
               "borderRadius": "5px",
@@ -32,12 +33,17 @@ exports[`Basket 1`] = `
           width="300px"
         />
         <h3 />
-        <p />
+        <p>
+          J is awesome
+        </p>
         <p>
           Price: 
+          30.00
         </p>
         <div
           className="sc-bwzfXH jLfHiB"
+          id={1}
+          onClick={[Function]}
         >
           <svg
             fill="none"
@@ -71,431 +77,7 @@ exports[`Basket 1`] = `
         </div>
         <div
           className="sc-htpNat ipDBtf"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="16"
-              y2="12"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="8"
-              y2="8"
-            />
-          </svg>
-        </div>
-      </li>
-      <li
-        className="sc-bdVaJa ikFPsF"
-      >
-        <img
-          height="300px"
-          style={
-            Object {
-              "borderRadius": "5px",
-              "maxWidth": "100%",
-            }
-          }
-          width="300px"
-        />
-        <h3 />
-        <p />
-        <p>
-          Price: 
-        </p>
-        <div
-          className="sc-bwzfXH jLfHiB"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#EE8CA3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="15"
-              x2="9"
-              y1="9"
-              y2="15"
-            />
-            <line
-              x1="9"
-              x2="15"
-              y1="9"
-              y2="15"
-            />
-          </svg>
-        </div>
-        <div
-          className="sc-htpNat ipDBtf"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="16"
-              y2="12"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="8"
-              y2="8"
-            />
-          </svg>
-        </div>
-      </li>
-      <li
-        className="sc-bdVaJa ikFPsF"
-      >
-        <img
-          height="300px"
-          style={
-            Object {
-              "borderRadius": "5px",
-              "maxWidth": "100%",
-            }
-          }
-          width="300px"
-        />
-        <h3 />
-        <p />
-        <p>
-          Price: 
-        </p>
-        <div
-          className="sc-bwzfXH jLfHiB"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#EE8CA3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="15"
-              x2="9"
-              y1="9"
-              y2="15"
-            />
-            <line
-              x1="9"
-              x2="15"
-              y1="9"
-              y2="15"
-            />
-          </svg>
-        </div>
-        <div
-          className="sc-htpNat ipDBtf"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="16"
-              y2="12"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="8"
-              y2="8"
-            />
-          </svg>
-        </div>
-      </li>
-      <li
-        className="sc-bdVaJa ikFPsF"
-      >
-        <img
-          height="300px"
-          style={
-            Object {
-              "borderRadius": "5px",
-              "maxWidth": "100%",
-            }
-          }
-          width="300px"
-        />
-        <h3 />
-        <p />
-        <p>
-          Price: 
-        </p>
-        <div
-          className="sc-bwzfXH jLfHiB"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#EE8CA3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="15"
-              x2="9"
-              y1="9"
-              y2="15"
-            />
-            <line
-              x1="9"
-              x2="15"
-              y1="9"
-              y2="15"
-            />
-          </svg>
-        </div>
-        <div
-          className="sc-htpNat ipDBtf"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="16"
-              y2="12"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="8"
-              y2="8"
-            />
-          </svg>
-        </div>
-      </li>
-      <li
-        className="sc-bdVaJa ikFPsF"
-      >
-        <img
-          height="300px"
-          style={
-            Object {
-              "borderRadius": "5px",
-              "maxWidth": "100%",
-            }
-          }
-          width="300px"
-        />
-        <h3 />
-        <p />
-        <p>
-          Price: 
-        </p>
-        <div
-          className="sc-bwzfXH jLfHiB"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#EE8CA3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="15"
-              x2="9"
-              y1="9"
-              y2="15"
-            />
-            <line
-              x1="9"
-              x2="15"
-              y1="9"
-              y2="15"
-            />
-          </svg>
-        </div>
-        <div
-          className="sc-htpNat ipDBtf"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="16"
-              y2="12"
-            />
-            <line
-              x1="12"
-              x2="12"
-              y1="8"
-              y2="8"
-            />
-          </svg>
-        </div>
-      </li>
-      <li
-        className="sc-bdVaJa ikFPsF"
-      >
-        <img
-          height="300px"
-          style={
-            Object {
-              "borderRadius": "5px",
-              "maxWidth": "100%",
-            }
-          }
-          width="300px"
-        />
-        <h3 />
-        <p />
-        <p>
-          Price: 
-        </p>
-        <div
-          className="sc-bwzfXH jLfHiB"
-        >
-          <svg
-            fill="none"
-            height="32"
-            stroke="#EE8CA3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-            />
-            <line
-              x1="15"
-              x2="9"
-              y1="9"
-              y2="15"
-            />
-            <line
-              x1="9"
-              x2="15"
-              y1="9"
-              y2="15"
-            />
-          </svg>
-        </div>
-        <div
-          className="sc-htpNat ipDBtf"
+          id="nodejs"
         >
           <svg
             fill="none"
@@ -537,30 +119,36 @@ exports[`Basket 1`] = `
       className="sc-htoDjs kPtwwD"
       id="buy-button"
     >
-      <svg
-        fill="none"
-        height="32"
-        stroke="#ffff"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-        width="32"
-        xmlns="http://www.w3.org/2000/svg"
+      <a
+        href="https://secure.checkout.visa.com/"
       >
-        <path
-          d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
-        />
-        <line
-          x1="3"
-          x2="21"
-          y1="6"
-          y2="6"
-        />
-        <path
-          d="M16 10a4 4 0 0 1-8 0"
-        />
-      </svg>
+        <svg
+          fill="none"
+          height="32"
+          stroke="#ffff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width="32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+          />
+          <line
+            x1="3"
+            x2="21"
+            y1="6"
+            y2="6"
+          />
+          <path
+            d="M16 10a4 4 0 0 1-8 0"
+          />
+        </svg>
+         £
+        30.00
+      </a>
     </div>
   </div>
 </div>

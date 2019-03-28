@@ -3,7 +3,7 @@ env:
     - CC_TEST_REPORTER_ID=e6a4c359a41c464243d1f10927d1d08b2e841053604c9b6ca20d53d412d3c91f
 language: node_js
 node_js:
-  - "stable"
+  - 'stable'
 cache:
   directories:
     - node_modules
@@ -14,17 +14,18 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
-  - npm start &
+  - export TEST=true
+  - npm run start:test &
 script:
   - npm run build
   - npm run test
   - $(npm bin)/cypress run --config baseUrl=http://localhost:1234
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-
+  - unset TEST
 
 deploy:
   provider: firebase
   token:
-    secure: "ACXqKxukQF5uhdFlkpAoQitNv9KG26oOUXouXKgZ8DbIF0yx/Nscs/LoKpll1aTpJku9qBWu8MbM0Wy742bWrPjWXJODX5ao3b4SunoJUjQt4RqXLInGJFiUa9jjBIHx+CQ7ru0ODqs00XLRW8tdmlfwN7VHF8fEI1jNkIXgd4NNpu6cQH7vajaDPrJTmq1TS9Wqp9tfgNme5XS2E90pfyBZewOqc8Go3B5s363QW0A1H3MW7xKDK5c8ICWgryg0Vu6oaBylGDhzPUQ1vpcsbOwTqf3j76Ok86mOb2ayO56+BaKL1h4JcobjIBXcHOWpfrs+n+zBlgn2ZLIk084H4v9cgoSbdG28jGpT9F/3AqQPcubkM2jJWeVIEucfRx1xgfahUH76H37Bo1V8e+uOgZOhdevxtptLEHYNRlRlFWYcF7zH3hFEVwu7G7nwbwj2X0UQr93F/MpN10M8Hkya0DtDWhuStRubTyg1nWuVMfJNyMvuoJGj50MEZo4PG1eOAjHxKozUzSxi3wyJI2+foxqpKcmSLtJnIqPWB5BAGhw+3tB9uWUSfsxdC3lRnBorR/D/VhYujJGV2yGTqewoIlOipqKg3zVupMjOcDgvs72zmdtA8WcUkiJ84pTOx97nWF8MwjCR3k/swTKvL4rQitlFWBS6xSA3cczXG186gtQ="
+    secure: 'ACXqKxukQF5uhdFlkpAoQitNv9KG26oOUXouXKgZ8DbIF0yx/Nscs/LoKpll1aTpJku9qBWu8MbM0Wy742bWrPjWXJODX5ao3b4SunoJUjQt4RqXLInGJFiUa9jjBIHx+CQ7ru0ODqs00XLRW8tdmlfwN7VHF8fEI1jNkIXgd4NNpu6cQH7vajaDPrJTmq1TS9Wqp9tfgNme5XS2E90pfyBZewOqc8Go3B5s363QW0A1H3MW7xKDK5c8ICWgryg0Vu6oaBylGDhzPUQ1vpcsbOwTqf3j76Ok86mOb2ayO56+BaKL1h4JcobjIBXcHOWpfrs+n+zBlgn2ZLIk084H4v9cgoSbdG28jGpT9F/3AqQPcubkM2jJWeVIEucfRx1xgfahUH76H37Bo1V8e+uOgZOhdevxtptLEHYNRlRlFWYcF7zH3hFEVwu7G7nwbwj2X0UQr93F/MpN10M8Hkya0DtDWhuStRubTyg1nWuVMfJNyMvuoJGj50MEZo4PG1eOAjHxKozUzSxi3wyJI2+foxqpKcmSLtJnIqPWB5BAGhw+3tB9uWUSfsxdC3lRnBorR/D/VhYujJGV2yGTqewoIlOipqKg3zVupMjOcDgvs72zmdtA8WcUkiJ84pTOx97nWF8MwjCR3k/swTKvL4rQitlFWBS6xSA3cczXG186gtQ='
   message: "Firebase deployment, check the site to see it's worked"
