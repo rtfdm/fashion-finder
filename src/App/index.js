@@ -67,6 +67,10 @@ export default class App extends Component {
       })
   }
 
+  componentWillUnmount() {
+    firebase.app().delete()
+  }
+
   handleClick = () => {
     this.setState({ currentLook: this.state.looks[0] })
     const looks = this.state.looks

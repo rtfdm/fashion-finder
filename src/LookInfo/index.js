@@ -111,7 +111,7 @@ class LookInfoPage extends Component {
     look: null,
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const { id } = this.props.match.params
     const looksTable = db.collection('looks')
     looksTable
@@ -130,6 +130,7 @@ class LookInfoPage extends Component {
         })
       })
   }
+
   render() {
     return (
       <Container>
