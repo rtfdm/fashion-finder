@@ -28,7 +28,7 @@ const ListItem = ({
       />
       <h3>{name}</h3>
       <p>{desc}</p>
-      <p>Price: {price}</p>
+      <p>Price: {(price / 100).toFixed(2)}</p>
       <DeleteButton />
       <InfoButton />
     </li>
@@ -51,7 +51,7 @@ const StyledListItem = styled(ListItem)`
 
 const DeleteButton = ({ className, id, IconComponent, color, handleClick }) => {
   return (
-    <div className={className} id={id} onClick = {handleClick}>
+    <div className={className} id={id} onClick={handleClick}>
       {<IconComponent color={color} size="32" />}
     </div>
   )
@@ -90,11 +90,10 @@ const StyledInfoButton = styled(InfoButton)`
 `
 
 class Item extends Component {
-  
   handleClick = () => {
     this.props.removeFromBasket(this.props.details.id)
   }
-  
+
   render() {
     const { id, image, desc, price } = this.props.details
     return (
@@ -109,7 +108,7 @@ class Item extends Component {
               IconComponent={XCircle}
               color="#EE8CA3"
               id={id}
-              handleClick = {this.handleClick}
+              handleClick={this.handleClick}
             />
           )}
           InfoButton={props => (
