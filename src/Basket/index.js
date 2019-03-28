@@ -51,7 +51,7 @@ const ListContainer = styled.div`
   padding: 0;
   margin: 0;
   list-style: none;
-  margin-bottom: 120px;
+  margin-bottom: 50px;
 
   @media only screen and (max-width: 599px) {
     margin: 0 auto;
@@ -139,6 +139,7 @@ const P = styled.p`
   color: white;
   font-size: 20px;
   padding-left: 10px;
+  padding-right: 10px;
 `
 
 class Basket extends Component {
