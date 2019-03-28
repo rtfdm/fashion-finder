@@ -18,6 +18,10 @@ The team created a beautiful, simple-to-use and responsive application in React.
 Clone repository: ` git clone git@github.com:rtfdm/fashion-finder.git`.
 Install dependencies: `npm install`
 
+Create a [Firebase](https://firebase.google.com) database to serve your content, and another one for your test database. On our project, these were called `fashion-finder-prod` and `fashion-finder-test`. The wiki above has more information about the data structure of the database if you want to model your own.
+
+You will need to input environment variables into your `.env` file based on your Firebase configuration. Again, the wiki above has more information. We suggest using `source .env` to make sure the configurations get loaded into your profile.
+
 ### Development
 
 Throughout our development of Fashion Finder, we used ESLint to make sure our code conformed to standard. You can run `eslint src/`. You may need to run `npm i eslint-plugin-react@latest --save-dev` or `npm i -g eslint-plugin-react@latest` first to make sure you have the React plugin installed. (The latter command installs the package globally).
