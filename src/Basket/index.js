@@ -72,6 +72,7 @@ const HeaderStyle = styled.div`
   flex-wrap: wrap;
   margin: 0;
   list-style: none;
+  margin-bottom: 20px;
 `
 const FooterStyling = styled.div`
   display: grid;
