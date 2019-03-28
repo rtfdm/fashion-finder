@@ -56,6 +56,7 @@ const StyledLikeDismissButton = styled(LikeDismissButton)`
   border-radius: 100px;
   max-height: 62px;
   padding: 15px;
+  cursor: pointer;
 
   :first-of-type {
     margin-right: 20px;
