@@ -129,7 +129,7 @@ const StyledActualBuyButton = styled.button`
   padding: 5px;
   color: black;
   display: flex;
-  padding: 10px;
+  padding: 8px 10px;
   box-shadow: 0px 4px 20px rgba(79, 79, 79, 0.25);
   cursor: pointer;
   margin-bottom: 100px;
