@@ -111,7 +111,7 @@ class LookInfoPage extends Component {
     look: null,
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const { id } = this.props.match.params
     const looksTable = db.collection('looks')
     looksTable
@@ -131,14 +131,11 @@ class LookInfoPage extends Component {
       })
   }
 
-  componentWillUnmount() {
-    firebase.app().delete()
-  }
-
   render() {
     return (
       <Container>
         <StyledBackButton IconComponent={ArrowLeft} />
+        <p>working</p>
         {this.state.look && (
           <InnerContainer>
             <StyledLookImage src={this.state.look.image} />
