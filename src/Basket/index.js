@@ -51,7 +51,7 @@ const ListContainer = styled.div`
   padding: 0;
   margin: 0;
   list-style: none;
-  margin-bottom: 120px;
+  margin-bottom: 50px;
 
   @media only screen and (max-width: 599px) {
     margin: 0 auto;
@@ -129,7 +129,7 @@ const StyledActualBuyButton = styled.button`
   padding: 5px;
   color: black;
   display: flex;
-  padding: 10px;
+  padding: 8px 10px;
   box-shadow: 0px 4px 20px rgba(79, 79, 79, 0.25);
   cursor: pointer;
   margin-bottom: 100px;
@@ -139,6 +139,7 @@ const P = styled.p`
   color: white;
   font-size: 20px;
   padding-left: 10px;
+  padding-right: 10px;
 `
 
 class Basket extends Component {

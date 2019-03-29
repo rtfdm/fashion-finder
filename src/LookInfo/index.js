@@ -2,14 +2,15 @@ import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import firebase, { db } from '../firebase'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 import { ArrowLeft } from 'react-feather'
 
-const BackButton = ({ IconComponent, className }) => (
-  <Link to="/" id="back-button" className={className}>
+const BackButton = ({ IconComponent, className, goBack }) => (
+  <div className={className} onClick={goBack}>
     <div>{<IconComponent size="24" color="#838383" />}</div>
     <div>Back</div>
-  </Link>
+  </div>
 )
 
 const StyledContainer = styled.div`
@@ -29,6 +30,7 @@ const StyledBackButton = styled(BackButton)`
   margin-top: -35px;
   margin: 0 0 50px 0;
   transition: all ease 0.5s;
+  cursor: pointer;
 
   text-decoration: none;
 
@@ -137,11 +139,15 @@ class LookInfoPage extends Component {
       })
   }
 
+  goBack = () => {
+    this.props.history.goBack()
+  }
+
   render() {
     return (
       <StyledContainer>
         <Container>
-          <StyledBackButton IconComponent={ArrowLeft} />
+          <StyledBackButton IconComponent={ArrowLeft} goBack={this.goBack} />
           {this.state.look && (
             <InnerContainer>
               <StyledLookImage src={this.state.look.image} />

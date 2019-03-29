@@ -12,7 +12,7 @@ const ListItem = ({
   className,
   src,
   name,
-  desc,
+  description,
   price,
   DeleteButton,
   InfoButton,
@@ -26,9 +26,10 @@ const ListItem = ({
         width="300px"
         height="300px"
       />
-      <h3>{name}</h3>
-      <p>{desc}</p>
-      <p>Price: {(price / 100).toFixed(2)}</p>
+      <p className="card-text">{description}</p>
+      <p className="card-text">
+        <strong>Price:</strong> £{(price / 100).toFixed(2)}
+      </p>
       <DeleteButton />
       <InfoButton />
     </li>
@@ -95,13 +96,13 @@ class Item extends Component {
   }
 
   render() {
-    const { id, image, desc, price } = this.props.details
+    const { id, image, description, price } = this.props.details
     return (
       <Fragment>
         <StyledListItem
           src={image}
           id={id}
-          desc={desc}
+          description={description.substring(0, 50) + '...'}
           price={price}
           DeleteButton={props => (
             <StyledDeleteButton
