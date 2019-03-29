@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "prod": "fashion-finder-prod",
+    "default": "fashion-finder-prod"
+  }
+}
