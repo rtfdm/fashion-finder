@@ -25,6 +25,18 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
+  .card-text {
+    line-height: 1.4;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    padding: 3px;
+  }
+
+  .price {
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+
   #app {
     @media only screen and (min-width: 400px) {
       min-height: 100vh;
