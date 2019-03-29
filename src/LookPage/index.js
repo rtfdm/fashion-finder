@@ -51,11 +51,24 @@ const LookBookLink = ({ className, id, IconComponent, color }) => {
   )
 }
 
+const StyledLookBookLink = styled(LookBookLink)`
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: black;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
 const StyledLikeDismissButton = styled(LikeDismissButton)`
   box-shadow: 0px 4px 20px rgba(79, 79, 79, 0.25);
   border-radius: 100px;
   max-height: 62px;
   padding: 15px;
+  cursor: pointer;
 
   :first-of-type {
     margin-right: 20px;
@@ -76,7 +89,7 @@ class LookPage extends Component {
       <div>
         {this.props.currentLook && (
           <Fragment>
-            <LookBookLink
+            <StyledLookBookLink
               id="lookbook"
               lookId={this.props.currentLook.id}
               IconComponent={Gift}

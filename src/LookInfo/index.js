@@ -12,6 +12,12 @@ const BackButton = ({ IconComponent, className }) => (
   </Link>
 )
 
+const StyledContainer = styled.div`
+  display: grid;
+  grid-template-columns: min-content;
+  justify-content: center;
+`
+
 const StyledBackButton = styled(BackButton)`
   display: grid;
   grid-template-columns: min-content min-content;
@@ -133,19 +139,21 @@ class LookInfoPage extends Component {
 
   render() {
     return (
-      <Container>
-        <StyledBackButton IconComponent={ArrowLeft} />
-        {this.state.look && (
-          <InnerContainer>
-            <StyledLookImage src={this.state.look.image} />
-            <StyledLookDetails
-              brands={this.state.look.brands}
-              description={this.state.look.description}
-              price={this.state.look.price}
-            />
-          </InnerContainer>
-        )}
-      </Container>
+      <StyledContainer>
+        <Container>
+          <StyledBackButton IconComponent={ArrowLeft} />
+          {this.state.look && (
+            <InnerContainer>
+              <StyledLookImage src={this.state.look.image} />
+              <StyledLookDetails
+                brands={this.state.look.brands}
+                description={this.state.look.description}
+                price={this.state.look.price}
+              />
+            </InnerContainer>
+          )}
+        </Container>
+      </StyledContainer>
     )
   }
 }

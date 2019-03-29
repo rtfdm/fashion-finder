@@ -21,6 +21,10 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   #app {
     @media only screen and (min-width: 400px) {
       min-height: 100vh;
@@ -56,9 +60,9 @@ export default class App extends Component {
           }
 
           looks.push(look)
-          // looks.sort(function() {
-          //   return 0.5 - Math.random()
-          // })
+          looks.sort(function() {
+            return 0.5 - Math.random()
+          })
         })
 
         this.setState({ currentLook: looks[0] })

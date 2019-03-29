@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
-import { ArrowLeft, ShoppingBag } from 'react-feather'
+import { ArrowLeft, ShoppingBag, CreditCard } from 'react-feather'
 import { Link } from 'react-router-dom'
 import basketItems from './sampleItems'
 import Item from '../Item/index'
@@ -32,7 +32,7 @@ const StyledBackButton = styled(BackButton)`
 `
 
 const Container = styled.div`
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -72,45 +72,74 @@ const HeaderStyle = styled.div`
   flex-wrap: wrap;
   margin: 0;
   list-style: none;
+  margin-bottom: 20px;
 `
 const FooterStyling = styled.div`
-  display: grid;
-  grid-template-columns: repeat(11, 2fr);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
+  display: flex;
+  justify-content: flex-end;
   opacity: 0.8;
   padding: 10px;
-  color: #ffff
-  text-align: center;
-  min-width: 80vw;
+  color: #ffff;
 `
 
-const BuyButton = ({ className, id, IconComponent, color, totalPrice }) => {
+const ShoppingBasket = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
+
+const BuyButton = ({ className, id, IconComponent, color }) => {
   return (
     <div className={className} id={id}>
-      <Link to="/checkout">
-        {<IconComponent color={color} size="32" />} £{totalPrice}
-      </Link>
+      <Link to="/checkout">{<IconComponent color={color} size="26" />}</Link>
+    </div>
+  )
+}
+const ActualBuyButton = ({
+  className,
+  id,
+  IconComponent,
+  color,
+  totalPrice,
+}) => {
+  return (
+    <div className={className} id={id}>
+      <Link to="/checkout">{<IconComponent color={color} size="26" />}</Link>
     </div>
   )
 }
 
-const StyledBuyButton = styled(BuyButton)`
-  grid-column: 6;
-  background-color: #a6befa;
-  box-shadow: 0px 4px 20px rgba(100, 100, 100, 100);
-  border-radius: 100px;
-  max-height: 62px;
-  padding: 10px;
-  margin: 0 auto;
+const StyledBuyButton = styled(BuyButton)``
+
+const StyledPrice = styled.div`
+  color: black;
+  display: block;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 2px;
 `
 
 const ArrowMargin = {
   marginLeft: '25px',
 }
+
+const StyledActualBuyButton = styled.button`
+  background-color: black;
+  border-radius: 5px;
+  padding: 5px;
+  color: black;
+  display: flex;
+  padding: 10px;
+  box-shadow: 0px 4px 20px rgba(79, 79, 79, 0.25);
+  cursor: pointer;
+  margin-bottom: 100px;
+`
+
+const P = styled.p`
+  color: white;
+  font-size: 20px;
+  padding-left: 10px;
+`
 
 class Basket extends Component {
   state = {
@@ -159,9 +188,24 @@ class Basket extends Component {
           <StyledBuyButton
             id="buy-button"
             IconComponent={ShoppingBag}
-            color="#ffff"
+            color="#000"
             totalPrice={this.totalPrice(this.state.basket)}
           />
+          <StyledPrice>
+            Total: £{this.totalPrice(this.props.basket)}
+          </StyledPrice>
+        </FooterStyling>
+        <FooterStyling>
+          <Link to="/checkout">
+            <StyledActualBuyButton>
+              <ActualBuyButton
+                id="actual-buy-button"
+                IconComponent={CreditCard}
+                color="#fff"
+              />
+              <P>Buy</P>
+            </StyledActualBuyButton>
+          </Link>
         </FooterStyling>
       </Container>
     )
