@@ -114,6 +114,16 @@ const ActualBuyButton = ({
   )
 }
 
+const Head = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+
+  @media only screen and (max-width: 599px) {
+    justify-content: center;
+  }
+`
+
 const StyledBuyButton = styled(BuyButton)``
 
 const StyledPrice = styled.div`
@@ -184,9 +194,11 @@ class Basket extends Component {
         <HeaderStyle>
           <StyledBackButton IconComponent={ArrowLeft} />
         </HeaderStyle>
-        <HeaderStyle>
+
+        <Head>
           <h1>Your Lookbook</h1>
-        </HeaderStyle>
+        </Head>
+
         <ul>
           <ListContainer>{this.renderBasket()}</ListContainer>
         </ul>
