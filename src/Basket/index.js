@@ -80,6 +80,11 @@ const FooterStyling = styled.div`
   opacity: 0.8;
   padding: 10px;
   color: #ffff;
+
+  @media only screen and (max-width: 599px) {
+    margin-top: 50px;
+    justify-content: center;
+  }
 `
 
 const ShoppingBasket = styled.div`
@@ -108,6 +113,16 @@ const ActualBuyButton = ({
     </div>
   )
 }
+
+const Head = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+
+  @media only screen and (max-width: 599px) {
+    justify-content: center;
+  }
+`
 
 const StyledBuyButton = styled(BuyButton)``
 
@@ -179,9 +194,11 @@ class Basket extends Component {
         <HeaderStyle>
           <StyledBackButton IconComponent={ArrowLeft} />
         </HeaderStyle>
-        <HeaderStyle>
+
+        <Head>
           <h1>Your Lookbook</h1>
-        </HeaderStyle>
+        </Head>
+
         <ul>
           <ListContainer>{this.renderBasket()}</ListContainer>
         </ul>
