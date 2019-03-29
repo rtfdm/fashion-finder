@@ -80,6 +80,11 @@ const FooterStyling = styled.div`
   opacity: 0.8;
   padding: 10px;
   color: #ffff;
+
+  @media only screen and (max-width: 599px) {
+    margin-top: 50px;
+    justify-content: center;
+  }
 `
 
 const ShoppingBasket = styled.div`
