@@ -30,7 +30,7 @@
     "eslint-plugin-cypress": "^2.2.1",
     "eslint-plugin-react": "^7.12.4",
     "jest-cli": "^24.5.0",
-    "parcel": "^1.12.3",
+    "parcel": "^2.8.2",
     "react-test-renderer": "^16.8.5",
     "react-testing-library": "^6.0.3"
   },
